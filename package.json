@@ -2,15 +2,19 @@
   "name": "tp2",
   "version": "0.1.0",
   "description": "Um gerenciador de tarefas",
-  "main": "principal.js",
+  "main": "Server/principal.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node principal.js"
   },
-  "author": "Livia Sossai",
-  "license": "ISC",
   "dependencies": {
-      "express": "latest",
-      "passport": "latest",
-      "passport-local": "latest"
+    "express": "latest"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liviasossai/tp2"
   }
+
 }
