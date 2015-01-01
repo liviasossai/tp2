@@ -1,0 +1,143 @@
+.caixa{
+    //position: relative;
+    border-style: solid;
+    border-width:1px;
+    border-radius:7px;
+    border-color: #555;
+    padding: 20px;
+    background-color: #fff;
+    width: 350px;
+    text-align: center;
+    
+    -webkit-box-shadow: 11px 10px 29px -6px rgba(0,0,0,0.75);
+    -moz-box-shadow: 11px 10px 29px -6px rgba(0,0,0,0.75);
+    box-shadow: 11px 10px 29px -6px rgba(0,0,0,0.75);
+    
+}
+
+
+.caixa h2{
+    
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    text-align: center;
+}
+
+.caixa b{
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    position: absolute;
+    right: 50%;
+    text-align: right;
+    font-weight: normal;
+}
+
+.caixa input{
+    position: absolute;
+    left: 50%;
+    text-align: left;
+}
+
+input{
+    background-color: #fff;
+    border-style: solid;
+    border-width:1px;
+    border-color: #fff #fff #999 #fff;
+    margin-left: 5px;
+    font-family: 'Architects Daughter', cursive;
+    font-size: 16px;
+    
+}
+
+input[type="submit"]{
+    background-color: #EEE;
+    border-width:1px;
+    border-style: solid;
+    border-color: #999;
+    border-radius:4px;
+    position: absolute;
+    right: 50%;
+    left: 50%;
+    bottom: 15px;
+    width: 80px;
+    margin-left: -40px;
+    margin-right: -40px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+#log_in{
+    position: absolute;
+    left: 0px;
+    top: 100px;
+}
+
+#ou{
+    position: absolute;
+    font-family: 'Architects Daughter', cursive;
+    font-size: 20px;
+    width: 50px;
+    left: 50%;
+    margin-left: -25px;
+    top: 150px;
+    text-align: center;
+}
+
+#registro{
+    position: absolute;
+    right: 0px;
+    top: 100px;
+}
+
+
+#conteudo{
+    position: absolute;
+    background-color: #B3A7EC;
+    right: 50%;
+    left: 50%;
+    margin-left:-440px;
+    margin-right:-440px;
+    width: 880px;
+    height: 100px;
+}
+
+#comece{
+    position: absolute;
+    font-family: 'Architects Daughter', cursive;
+    font-size: 24px;
+    color: #000;
+    text-align: center;
+    top: 5px;
+    width: 880px;
+    
+}
+
+body{
+    background-color: #B3A7EC;
+}
+
+header{
+    font-family: 'Architects Daughter', cursive;
+    padding: 20px;
+    background-color: #A091E9;
+    border-style: solid;
+    border-bottom-color: #fff;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    border-width:2px;
+}
+
+header > h1{
+    text-align: center;
+    color: #B5320B;
+}
+
+header > h2{
+    padding-right: 50px;
+    text-align: right;
+    color: #fff;
+    font-weight: normal;
+}
+
+

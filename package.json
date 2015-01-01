@@ -4,10 +4,17 @@
   "description": "Um gerenciador de tarefas",
   "main": "Server/principal.js",
   "scripts": {
-    "start": "node principal.js"
+    "start": "node Server/principal.js"
   },
   "dependencies": {
-    "express": "latest"
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.10.0",
+    "express": "latest",
+    "express-session": "^1.9.3",
+    "hbs": "^2.8.0",
+    "mongoose": "latest",
+    "passport": "latest",
+    "passport-local": "latest"
   },
   "engines": {
     "node": "0.10.x"
@@ -16,5 +23,4 @@
     "type": "git",
     "url": "https://github.com/liviasossai/tp2"
   }
-
 }

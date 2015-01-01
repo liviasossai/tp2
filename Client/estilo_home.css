@@ -1,0 +1,242 @@
+header{
+    
+    height: 250px;
+    background-image: url("images/quadro.jpg");
+    background-repeat: repeat;
+    background-position: center;
+    border-style: solid;
+    border-left-width: 0px;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width:5px;
+    
+    border-bottom-color: #A091E9;
+    
+    -webkit-box-shadow: 0px 14px 96px 0px rgba(128,128,128,1);
+    -moz-box-shadow: 0px 14px 96px 0px rgba(128,128,128,1);
+    box-shadow: 0px 14px 96px 0px rgba(128,128,128,1);
+    
+    z-index: 0;
+    
+}
+
+body{
+    margin: 0px;
+    background-color: #EEE;
+}
+
+
+.top_cabecalho{
+    border-style: solid;
+    border-width:2px;
+    
+    height: 40px;
+    
+    background-color: #EEE;
+    border-color: #EEE;
+    
+    -webkit-box-shadow: 3px 4px 27px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 4px 27px 0px rgba(0,0,0,0.75);
+    box-shadow: 3px 4px 27px 0px rgba(0,0,0,0.75);
+    
+    position: absolute;
+    top: 0px;
+    
+}
+
+#top_left{
+    
+    
+    width: 140px;
+    padding-left: 20px;
+    border-bottom-right-radius: 8px;
+    left: 0px;
+    
+}
+
+#top_right{
+    
+    
+    width: 220px;
+    padding-left: 20px;
+    border-bottom-left-radius: 8px;
+    right: 0px;
+    
+}
+
+#logout{
+    width: 30px;
+    height: 30px;
+    top: 7px;
+    right: 10px;
+    position: absolute;
+    
+}
+
+.top_cabecalho p{
+    color: #000;
+    font-family: 'Architects Daughter', cursive;
+    font-size: 16px;
+    -webkit-margin-before: 10px;
+    -webkit-margin-after: 7px;
+    
+}
+
+
+nav{
+    background-color: #fff;
+    
+    position: absolute;
+    
+    right: 50%;
+    left: 50%;
+    
+    margin-left: -490px;
+    margin-right: -490px;
+    
+    width: 980px;
+    height: 500px;
+    
+    z-index: -1;
+    
+}
+
+
+#agenda{
+    
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    
+    border-style: solid;
+    border-color: #CCC;
+    border-left-width: 0px;
+    border-top-width: 0px;
+    border-right-width: 2px;
+    border-bottom-width:0px;
+    
+    width: 650px;
+    height: 500px;
+    
+}
+
+
+
+.paper_sticker{
+    
+    border-width: 0px;
+    background-color: #FFFF99;
+    
+    width: 165px;
+    height: 135px;
+    
+    -webkit-box-shadow: 8px 8px 50px -1px rgba(8,8,8,1);
+    -moz-box-shadow: 8px 8px 50px -1px rgba(8,8,8,1);
+    box-shadow: 8px 8px 50px -1px rgba(8,8,8,1);
+    
+    padding: 15px;
+}
+
+.paper_sticker:before{
+    
+    position: absolute;
+    content: url('images/pin.png');
+    margin-top: -35px;
+    margin-left: 67px;
+    
+}
+
+.paper_sticker p{
+    color: #000;
+    font-family: 'Architects Daughter', cursive;
+    font-size: 16px;
+    
+    
+}
+
+
+#p1{
+    position: absolute;
+    
+    top: 90px;
+    left: 180px;
+    
+    -ms-transform: rotate(7deg); /* IE 9 */
+    -webkit-transform: rotate(7deg); /* Chrome, Safari, Opera */
+    transform: rotate(7deg);
+}
+
+#p2{
+    position: absolute;
+    
+    top: 90px;
+    left: 450px;
+    
+    -ms-transform: rotate(-5deg); /* IE 9 */
+    -webkit-transform: rotate(-5deg); /* Chrome, Safari, Opera */
+    transform: rotate(-5deg);
+}
+
+
+#agenda h1{
+    
+    text-align: center;
+    color: #000;
+    font-family: 'Architects Daughter', cursive;
+    font-size: 20px;
+    padding-top: 35px;
+    
+}
+
+#compor{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    
+    width: 330px;
+    height: 500px;
+}
+
+#compor h1{
+    
+    text-align: center;
+    color: #000;
+    font-family: 'Architects Daughter', cursive;
+    font-size: 20px;
+    padding-top: 35px;
+    
+}
+
+
+#compor input{
+    
+    font-family: 'Architects Daughter', cursive;
+    font-size: 14px;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: #999;
+    border-width: 1px;
+    position: relative;
+    width: 220px;
+    right: 50%;
+    left: 50%;
+    margin-left: -110px;
+    margin-right: -110px;
+
+}
+
+#compor p{
+    color: #000;
+    font-family: 'Architects Daughter', cursive;
+    font-size: 16px;
+    text-align: center;
+}
+
+#lembrete{
+    height: 150px;
+
+}
+
+
+
+
