@@ -31,7 +31,7 @@ initPassport(passport);
 //
 var bodyParser = require('body-parser')
 app.use( bodyParser.json() );
-app.use(bodyParser.urlencoded({ extended: true })); 
+app.use(bodyParser.urlencoded({ extended: true }));
 
 
 
@@ -60,11 +60,19 @@ app.post('/registrar', passport.authenticate('registro', {
 
 app.get('/home', function(req, res) {
         
-        //res.send();
-        //console.log(req.user)
+
         res.render('home', req.user);
         
         });
+
+
+app.post('/compor_lembrete', function(req, res) {
+    var compor = require('./compor.js');
+        compor(req, res);
+         
+        res.render('home', req.user);
+    
+});
 
 app.listen(app.get('port'), function() {
   console.log("Nodejs funcionando. Porta:" + app.get('port'));

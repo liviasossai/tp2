@@ -13,8 +13,10 @@ module.exports = function(passport){
                                             User.findOne({ 'username' :  username },
                                                          function(err, user) {
                                                          // Em caso de algum erro qualquer:
-                                                         if (err)
+                                                         if (err){
+                                                         console.log("erro");
                                                          return done(err);
+                                                         }
                                                          // Em caso de erro devido a usuário não encontrado:
                                                          if (!user){
                                                          console.log('Usuário não encontrado: '+username);

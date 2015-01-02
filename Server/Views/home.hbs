@@ -5,53 +5,97 @@
             <title>Home</title>
             <meta name="viewport" content="width=device-width, initial-scale=1">
                 <link rel="stylesheet" href="estilo_home.css">
-                    <link href='http://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-                <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Abel|Sacramento">
-                
-                    </head>
+                    <link href="http://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet" type="text/css">
+                        <link href="http://fonts.googleapis.com/css?family=Roboto" rel='stylesheet' type='text/css'>
+                        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Abel|Sacramento">
+                            
+                            </head>
     <body>
-       
+        
+        
+        
+        <header>
+            <div class="top_cabecalho" id="top_left">
+                <p> Próximos Eventos </p>
+            </div>
             
-            
-            <header>
-                <div class="top_cabecalho" id="top_left">
-                    <p> Próximos Eventos </p>
-                </div>
-                
-                <div class="top_cabecalho" id="top_right">
+            <div class="top_cabecalho" id="top_right">
                 <p> Bem-vindo, {{username}} </p>
                 <img id="logout" src="images/logout.png" alt="log_out">
-                </div>
-                
-                <div class="paper_sticker" id="p1">
-                <p> data: </p>
-                </div>
-                
-                <div class="paper_sticker" id="p2">
-                <p> jantar </p>
-                </div>
-                
-            </header>
+                    </div>
             
-             <div class="container" id="site">
+            <div class="paper_sticker alta_prioridade" id="p1">
+                <p> data: </p>
+            </div>
+            
+            <div class="paper_sticker prioridade_normal" id="p2">
+                <p> jantar </p>
+            </div>
+            
+        </header>
+        
+        <div class="container" id="site">
             <nav>
                 
                 <div id="agenda">
-                <h1> Minha agenda </p>
-                
-                </div>
+                    <h1> Minha agenda </h1>
+                        <table id="compromissos">
+                            
+                        <colgroup id="col1">
+                            <col/>
+                        </colgroup>
+                            
+                        <colgroup id="col2">
+                            <col/>
+                        </colgroup>
+
+                        <colgroup id="col3">
+                            <col/>
+                        </colgroup>
+
+                        <colgroup id="col4">
+                            <col/>
+                        </colgroup>
+                        
+                        <colgroup id="col5">
+                            <col/>
+                        </colgroup>
+                        
+                       <tr>
+                        <th>Data</th>
+                        <th>Resumo</th>
+                        <th></th>
+                        <th>Editar</th>
+                        <th>Excluir</th>
+                       </tr>
+                       {{#each compromissos}}
+                        <tr>
+                            
+                             <td>{{data}}</td>
+                             <td><div id="tit">{{titulo}}</div> <div id="desc">{{lembrete}}</div></td>
+                             <td><div id="detalhes" class="">+</div></td>
+                             <td></td>
+                             <td></td>
+                            
+                        </tr>
+                        {{/each}}
+                       </table>
+                        </div>
                 
                 <div id="compor">
-                <h1> Compor Lembrete </h1>
-                <p> Data </p>
-                <input type="date" id="data" name="data">
-                <p> Título </p>
-                <input type="text" id="titulo" name="titulo">
-                <p> O que fazer </p>
-                <input type="text" id="lembrete" name="lembrete">
-                <div>
+                    <form id="comporlem" action="compor_lembrete" method="POST">
+                        <h1> Compor Lembrete </h1>
+                        <p> Data </p>
+                        <input type="date" id="data" name="data">
+                            <p> Título </p>
+                            <input type="text" id="titulo" name="titulo">
+                                <p> O que fazer </p>
+                                <input type="text" id="lembrete" name="lembrete">
+                                    <input type="submit" id="adicionar" value="+">
+                                        </form>
+                    <div>
                         
-            </nav>
+                        </nav>
             
             
         </div>
