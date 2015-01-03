@@ -22,7 +22,8 @@ header{
 
 body{
     margin: 0px;
-    background-color: #EEE;
+    background-color: #fff;
+    min-height: 100%;
 }
 
 
@@ -118,11 +119,11 @@ nav{
     height: 100%;
 }
 
-.alta_prioridade{
+.imp_alta_paper{
     background-color: #FFC99A
 }
 
-.prioridade_normal{
+.imp_normal_paper{
 background-color: #FFFF99;
 }
 
@@ -214,7 +215,7 @@ padding-top: 15px;
 }
 
 
-#compor #data, #titulo, #lembrete{
+#compor #titulo, #lembrete{
     
     font-family: 'Architects Daughter', cursive;
     font-size: 14px;
@@ -231,6 +232,41 @@ padding-top: 15px;
 
 }
 
+#data{
+    font-family: 'Architects Daughter', cursive;
+    font-size: 14px;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: #999;
+    border-width: 1px;
+    position: relative;
+    width: 100px;
+    right: 50%;
+    left: 50%;
+    margin-left: -100px;
+    margin-right: 0px;
+    text-align: center;
+
+}
+
+
+#importancia{
+    font-family: 'Architects Daughter', cursive;
+    font-size: 14px;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: #999;
+    border-width: 1px;
+    position: relative;
+    width: 100px;
+    right: 50%;
+    left: 50%;
+    margin-left:  0px;
+    margin-right: -100px;
+    text-align: center;
+    
+}
+
 #compor #data:hover, #titulo:hover, #lembrete:hover{
     
     background-color: #eee;
@@ -244,6 +280,8 @@ padding-top: 15px;
     font-size: 16px;
     text-align: center;
 }
+
+
 
 #lembrete{
     height: 100px;
@@ -313,6 +351,7 @@ background-color: #DDD;
     border-right-width: 0px;
     border-left-width: 0px;
     border-color: #ddd;
+    padding: 15px
 }
 
 #desc {
@@ -322,4 +361,16 @@ visibility: hidden;
 
 #detalhes{
     color: #ccc;
+}
+
+.container{
+    height: 100%;
+}
+
+.imp_alta{
+    color: red;
+}
+
+imp_normal{
+    color: black;
 }

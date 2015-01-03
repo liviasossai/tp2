@@ -22,19 +22,18 @@
             <div class="top_cabecalho" id="top_right">
                 <p> Bem-vindo, {{username}} </p>
                 <img id="logout" src="images/logout.png" alt="log_out">
-                    </div>
+            </div>
             
-            <div class="paper_sticker alta_prioridade" id="p1">
+            <div class="paper_sticker imp_alta_paper" id="p1">
                 <p> data: </p>
             </div>
             
-            <div class="paper_sticker prioridade_normal" id="p2">
+            <div class="paper_sticker imp_normal_paper" id="p2">
                 <p> jantar </p>
             </div>
             
         </header>
         
-        <div class="container" id="site">
             <nav>
                 
                 <div id="agenda">
@@ -61,32 +60,38 @@
                             <col/>
                         </colgroup>
                         
-                       <tr>
+                       <thead>
                         <th>Data</th>
                         <th>Resumo</th>
                         <th></th>
                         <th>Editar</th>
                         <th>Excluir</th>
-                       </tr>
+                       </thead>
+                       <tbody>
                        {{#each compromissos}}
                         <tr>
                             
-                             <td>{{data}}</td>
-                             <td><div id="tit">{{titulo}}</div> <div id="desc">{{lembrete}}</div></td>
+                             <td class="{{importancia}}">{{data}}</td>
+                             <td><div id="tit" class="{{importancia}}">{{titulo}}</div> <div id="desc">{{lembrete}}</div></td>
                              <td><div id="detalhes" class="">+</div></td>
                              <td></td>
                              <td></td>
                             
                         </tr>
                         {{/each}}
+                        </tbody>
                        </table>
                         </div>
                 
                 <div id="compor">
                     <form id="comporlem" action="compor_lembrete" method="POST">
                         <h1> Compor Lembrete </h1>
-                        <p> Data </p>
+                        <p> Data / Importância</p>
                         <input type="date" id="data" name="data">
+                            <select id="importancia" name="importancia" value="Normal">
+                                <option value="imp_normal">Normal</option>
+                                <option value="imp_alta">Muito importante</option>
+                            </select>
                             <p> Título </p>
                             <input type="text" id="titulo" name="titulo">
                                 <p> O que fazer </p>
@@ -98,6 +103,5 @@
                         </nav>
             
             
-        </div>
     </body>
 </html>

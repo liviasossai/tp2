@@ -14,7 +14,8 @@
     "hbs": "^2.8.0",
     "mongoose": "latest",
     "passport": "latest",
-    "passport-local": "latest"
+    "passport-local": "latest",
+    "underscore": "^1.7.0"
   },
   "engines": {
     "node": "0.10.x"
