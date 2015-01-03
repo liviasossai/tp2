@@ -68,6 +68,12 @@ app.get('/home', function(req, res) {
 
 app.post('/compor_lembrete', function(req, res) {
     var compor = require('./compor.js');
+         var today = new Date();
+         var dd = today.getDate();
+         var mm = today.getMonth()+1;
+         var yyyy = today.getFullYear();
+         
+         req.body.data_add = dd+'-'+mm+'-'+yyyy;
         compor(req, res);
          
         res.render('home', req.user);

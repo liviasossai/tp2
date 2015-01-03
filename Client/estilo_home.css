@@ -354,13 +354,24 @@ background-color: #DDD;
     padding: 15px
 }
 
-#desc {
+.retraido {
 
-visibility: hidden;
+    //white-space: nowrap;
+    height: 0em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
 }
 
-#detalhes{
+.expandido{
+white-space: normal;
+height: auto;
+}
+
+.botao_detalhes{
     color: #ccc;
+    background-color: #fff;
+    border-width: 0px;
 }
 
 .container{
@@ -373,4 +384,11 @@ visibility: hidden;
 
 imp_normal{
     color: black;
+}
+
+.desc{
+    font-family: 'Roboto', sans-serif;
+    color: #ccc;
+    font-size: 14px;
+
 }
