@@ -24,14 +24,17 @@
                 <img id="logout" src="images/logout.png" alt="log_out">
             </div>
             
-            <div class="paper_sticker imp_alta_paper" id="p1">
-                <p> data: </p>
-            </div>
             
-            <div class="paper_sticker imp_normal_paper" id="p2">
-                <p> jantar </p>
+            <div id="papeis">
+                {{#each compromissos2}}
+            <div class="paper_sticker {{importancia}}_paper">
+                <p> <b>{{data}} </b> </p>
+                <p> {{lembrete}} </p>
+                <button type="button" name="botao_excluir" class="botao_excluir"></button>
             </div>
-            
+             {{/each}}
+            </div>
+           
         </header>
         
             <nav>
@@ -68,14 +71,14 @@
                         <th>Excluir</th>
                        </thead>
                        <tbody>
-                       {{#each compromissos}}
+                       {{#each compromissos1}}
                         <tr>
                             
                              <td class="{{importancia}}">{{data}}</td>
 <td><div id="tit" class="{{importancia}}">{{titulo}}</div> <div name="desc" class="desc retraido">{{lembrete}} <br> Data de Adição: {{data_add}}</div></td>
                              <td><button type="button" name="botao_detalhes" class="botao_detalhes">+</button></td>
-                             <td></td>
-                             <td></td>
+                             <td><button type="button" name="botao_editar" class="botao_editar"></button></td>
+                             <td><button type="button" name="botao_excluir" class="botao_excluir"></button></td>
                             
                         </tr>
                         {{/each}}

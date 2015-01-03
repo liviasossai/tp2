@@ -154,33 +154,57 @@ background-color: #FFFF99;
     color: #000;
     font-family: 'Architects Daughter', cursive;
     font-size: 16px;
+    text-align: center;
     
     
 }
 
 
-#p1{
+
+#papeis .paper_sticker:nth-child(1){
     position: absolute;
     
     top: 80px;
-    left: 180px;
+    left: 150px;
     
     -ms-transform: rotate(7deg); /* IE 9 */
     -webkit-transform: rotate(7deg); /* Chrome, Safari, Opera */
     transform: rotate(7deg);
 }
 
-#p2{
+#papeis .paper_sticker:nth-child(2){
     position: absolute;
     
     top: 80px;
-    left: 450px;
+    left: 420px;
     //background-color: #fff;
     -ms-transform: rotate(-5deg); /* IE 9 */
     -webkit-transform: rotate(-5deg); /* Chrome, Safari, Opera */
     transform: rotate(-5deg);
 }
 
+
+#papeis .paper_sticker:nth-child(3){
+    position: absolute;
+    
+    top: 80px;
+    left: 670px;
+    //background-color: #fff;
+    //-ms-transform: rotate(-5deg); /* IE 9 */
+   // -webkit-transform: rotate(-5deg); /* Chrome, Safari, Opera */
+    //transform: rotate(-5deg);
+}
+
+#papeis .paper_sticker:nth-child(4){
+    position: absolute;
+    
+    top: 80px;
+    left: 900px;
+    //background-color: #fff;
+    -ms-transform: rotate(-5deg); /* IE 9 */
+    -webkit-transform: rotate(5deg); /* Chrome, Safari, Opera */
+    transform: rotate(5deg);
+}
 
 #agenda{
 padding-top: 15px;
@@ -388,7 +412,74 @@ imp_normal{
 
 .desc{
     font-family: 'Roboto', sans-serif;
-    color: #ccc;
+    color: #bbb;
     font-size: 14px;
+
+}
+
+
+.botao_editar{
+    
+    background: url("images/edit.png");
+    background-repeat: no-repeat;
+    background-position: top left;
+    
+    border-style: solid;
+     border-width: 0px;
+    
+    width: 20px;
+    height: 20px;
+    
+    position: relative;
+    
+    left: 50%;
+    right:50%;
+    
+    margin-left: -10px;
+    margin-right: -10px;
+    
+    width: 20px;
+    
+}
+
+
+.botao_excluir{
+    
+    background: url("images/delete.png");
+    background-repeat: no-repeat;
+    background-position: top left;
+    
+    border-style: solid;
+    border-width: 0px;
+    
+    width: 20px;
+    height: 20px;
+    
+    position: relative;
+    
+    left: 50%;
+    right:50%;
+    
+    margin-left: -10px;
+    margin-right: -10px;
+    
+    width: 20px;
+    
+}
+
+button:hover{
+    opacity: 0.5;
+}
+
+
+.paper_sticker > button{
+
+position: absolute;
+bottom: 2px;
+right:0%;
+left:0%;
+margin-right: 0px;
+margin-left: 170px;
+ opacity: 0.5;
 
 }

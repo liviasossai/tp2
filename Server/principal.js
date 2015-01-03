@@ -61,7 +61,20 @@ app.post('/registrar', passport.authenticate('registro', {
 app.get('/home', function(req, res) {
         
 
-        res.render('home', req.user);
+        var compromissos1 = req.user.compromissos.slice();
+        var compromissos2 = compromissos1.splice(0, 4);
+
+        
+        var dados = { username: req.user.username,
+        compromissos1: compromissos1,
+        compromissos2: compromissos2
+        };
+        
+        //req.user.compromissos = compromissos2 + compromissos1;
+        console.log("comp1: ");
+        console.log(req.user.compromissos);
+        
+        res.render('home', dados);
         
         });
 
@@ -74,9 +87,18 @@ app.post('/compor_lembrete', function(req, res) {
          var yyyy = today.getFullYear();
          
          req.body.data_add = dd+'-'+mm+'-'+yyyy;
-        compor(req, res);
+         compor(req, res);
          
-        res.render('home', req.user);
+         var compromissos1 = req.user.compromissos.slice();
+         var compromissos2 = compromissos1.splice(0, 4);
+         
+         
+         var dados = { username: req.user.username,
+         compromissos1: compromissos1,
+         compromissos2: compromissos2
+         };
+         
+        res.render('home', dados);
     
 });
 
