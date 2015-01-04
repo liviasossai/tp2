@@ -5,31 +5,49 @@
             <title>Home</title>
             <meta name="viewport" content="width=device-width, initial-scale=1">
                 <link rel="stylesheet" href="estilo_home.css">
-                    <link href="http://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet" type="text/css">
-                        <link href="http://fonts.googleapis.com/css?family=Roboto" rel='stylesheet' type='text/css'>
-                            <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Abel|Sacramento">
-                                
-                                </head>
+                    <link rel="stylesheet" href="estilo_caixa_edicao.css">
+                        <link href="http://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet" type="text/css">
+                            <link href="http://fonts.googleapis.com/css?family=Roboto" rel='stylesheet' type='text/css'>
+                                <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Abel|Sacramento">
+                                    
+                                    </head>
     <body>
         
         <div id="editar_conteudo" class="escondido">
             <button type="button" id="fechar_edicao">×</button>
-            <h1> Editar Lembrete</h1>
-            <hr>
-            <form id="comporlem" action="compor_lembrete" method="POST">
-
-                <p> Data / Importância</p>
-                <input type="date" id="data" name="data">
-                    <select id="importancia" name="importancia" value="Normal">
-                        <option value="imp_normal">Normal</option>
-                        <option value="imp_alta">Muito importante</option>
-                    </select>
-                    <p> Título </p>
-                    <input type="text" id="titulo" name="titulo">
-                        <p> O que fazer </p>
-                        <input type="text" id="lembrete" name="lembrete">
-                            <input type="submit" id="adicionar" value="+">
-                                </form>
+            <div id="head_edicao">
+                <h1> Editar Lembrete </h1>
+            </div>
+            
+            <div id="body_edicao">
+                <form id="comporlem" action="editar_lembrete" method="POST">
+                    <table>
+                        
+                        <tr>
+                            <td><p> Data: </p></td>
+                            <td><input type="date" id="data_edit" name="data"></td>
+                        </tr>
+                        <tr>
+                            <td><p> Importância: </p></td>
+                            <td><select id="importancia_edit" name="importancia_edit" value="Normal">
+                                <option value="imp_normal">Normal</option>
+                                <option value="imp_alta">Muito importante</option>
+                            </select></td>
+                        </tr>
+                        <tr>
+                            <td><p> Título: </p></td>
+                            <td><input type="text" id="titulo_edit" name="titulo_edit"></td>
+                        </tr>
+                        <tr>
+                            <td><p> O que fazer: </p></td>
+                            <td><input type="text" id="lembrete_edit" name="lembrete_edit"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="submit" id="modificar" value="Pronto!"></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
         </div>
         
         
@@ -48,11 +66,12 @@
             
             <div id="papeis">
                 {{#each compromissos2}}
-                <div name="paper_sticker" class="paper_sticker {{importancia}}_paper">
-                    <p> <b>{{data}} </b> </p>
-                    <p> {{titulo}} </p>
-                    <button type="button" name="botao_excluir" class="botao_excluir"></button>
-                    <button type="button" name="botao_editar" class="botao_editar"></button>
+                <div name="paper_sticker" class="paper_sticker {{importancia}}">
+                    <p id="data_evento_{{_id}}"> <b>{{data}} </b> </p>
+                    <p id="titulo_evento_{{_id}}"> {{titulo}} </p>
+                    <p id="lem_evento_{{_id}}" class="escondido"> {{lembrete}} | Data de Adição: {{data_add}}</p>
+                    <button type="button" id="{{_id}}" name="botao_excluir" class="botao_excluir"></button>
+                    <button type="button" id="{{_id}}" name="botao_editar" class="botao_editar"></button>
                 </div>
                 {{/each}}
             </div>
@@ -96,11 +115,11 @@
                         {{#each compromissos1}}
                         <tr>
                             
-                            <td class="{{importancia}}">{{data}}</td>
-                            <td><div id="tit" class="{{importancia}}">{{titulo}}</div> <div name="desc" class="desc retraido">{{lembrete}} <br> Data de Adição: {{data_add}}</div></td>
+                            <td id="data_evento_{{_id}}" class="{{importancia}}">{{data}}</td>
+                            <td><div id="titulo_evento_{{_id}}" class="{{importancia}}">{{titulo}}</div> <div id="lem_evento_{{_id}}" name="desc" class="desc retraido">{{lembrete}} | Data de Adição: {{data_add}}</div></td>
                             <td><button type="button" name="botao_detalhes" class="botao_detalhes">+</button></td>
-                            <td><button type="button" name="botao_editar" class="botao_editar"></button></td>
-                            <td><button type="button" name="botao_excluir" class="botao_excluir"></button></td>
+                            <td><button type="button" id="{{_id}}" name="botao_editar" class="botao_editar"></button></td>
+                            <td><button type="button" id="{{_id}}" name="botao_excluir" class="botao_excluir"></button></td>
                             
                         </tr>
                         {{/each}}

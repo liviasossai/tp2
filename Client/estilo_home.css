@@ -111,16 +111,16 @@ nav{
     height: 100%;
 }
 
-.imp_alta_paper{
+.paper_sticker.imp_alta{
     background-color: #FFC99A
 }
 
-.imp_normal_paper{
+.paper_sticker.imp_normal{
     background-color: #FFFF99;
 }
 
 .paper_sticker{
-    
+    word-wrap: break-word;
     border-width: 0px;
     
     width: 165px;
@@ -140,6 +140,7 @@ nav{
     -o-transform: rotate(4deg);
     -ms-transform: rotate(4deg);
     
+
     padding: 15px;
 }
 
@@ -157,7 +158,8 @@ nav{
     font-family: 'Architects Daughter', cursive;
     font-size: 16px;
     text-align: center;
-    
+
+
     
 }
 
@@ -308,6 +310,7 @@ nav{
 
 #lembrete{
     height: 100px;
+    word-wrap: break-word;
     
 }
 
@@ -345,16 +348,19 @@ nav{
     position: absolute;
     right: 50%;
     left: 50%;
-    width:520px;
-    margin-right: -260px;
-    margin-left: -260px;
+    width:550px;
+    margin-right: -295px;
+    margin-left: -295px;
     
 }
 
 #compromissos td{
     padding: 10px;
-    
+
 }
+
+
+
 
 #compromissos #col1, #col3, #col4{
     border-style: solid;
@@ -383,12 +389,16 @@ nav{
     height: 0em;
     overflow: hidden;
     text-overflow: ellipsis;
+     word-wrap: break-word;
+     width: 200px;
     
 }
 
 .expandido{
+     word-wrap: break-word;
     white-space: normal;
     height: auto;
+     width: 200px;
 }
 
 .botao_detalhes{
@@ -525,49 +535,6 @@ button{
     -ms-transform: rotate(8deg);
 }
 
-/* Caixa de edição */
-#editar_conteudo{
-    width: 440px;
-    height: 400px;
-    background-color: #fff;
-    z-index: 1;
-    position: fixed;
-    
-    left:50%;
-    right: 50%;
-    margin-right: -220px;
-    margin-left: -220px;
-    
-    top: 10%;
-    
-    border-style: solid;
-    border-width:2px;
-    border-radius: 8px;
-    
-    border-color: #EEE;
-    
-    -webkit-box-shadow: 3px 4px 27px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 3px 4px 27px 0px rgba(0,0,0,0.75);
-    box-shadow: 3px 4px 27px 0px rgba(0,0,0,0.75);
-    
+#lemb{
+display: none;
 }
-
-.escondido{
-    display: none;
-}
-
-.visivel{
-    display: block;
-}
-
-#fechar_edicao{
-    position: absolute;
-    top: 0px;
-    right: 0px;
-}
-
-
-
-
-
-
