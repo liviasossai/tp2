@@ -102,6 +102,11 @@ app.post('/compor_lembrete', function(req, res) {
     
 });
 
+app.get('/logout', function(req, res) {
+           console.log(req);
+           res.redirect('/');
+           });
+
 app.listen(app.get('port'), function() {
   console.log("Nodejs funcionando. Porta:" + app.get('port'));
 });

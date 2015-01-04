@@ -7,11 +7,30 @@
                 <link rel="stylesheet" href="estilo_home.css">
                     <link href="http://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet" type="text/css">
                         <link href="http://fonts.googleapis.com/css?family=Roboto" rel='stylesheet' type='text/css'>
-                        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Abel|Sacramento">
-                         
-                            </head>
+                            <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Abel|Sacramento">
+                                
+                                </head>
     <body>
         
+        <div id="editar_conteudo" class="escondido">
+            <button type="button" id="fechar_edicao">×</button>
+            <h1> Editar Lembrete</h1>
+            <hr>
+            <form id="comporlem" action="compor_lembrete" method="POST">
+
+                <p> Data / Importância</p>
+                <input type="date" id="data" name="data">
+                    <select id="importancia" name="importancia" value="Normal">
+                        <option value="imp_normal">Normal</option>
+                        <option value="imp_alta">Muito importante</option>
+                    </select>
+                    <p> Título </p>
+                    <input type="text" id="titulo" name="titulo">
+                        <p> O que fazer </p>
+                        <input type="text" id="lembrete" name="lembrete">
+                            <input type="submit" id="adicionar" value="+">
+                                </form>
+        </div>
         
         
         <header>
@@ -21,90 +40,93 @@
             
             <div class="top_cabecalho" id="top_right">
                 <p> Bem-vindo, {{username}} </p>
-                <img id="logout" src="images/logout.png" alt="log_out">
+                <form id="log_out" action="logout" method="GET">
+                    <button type="submit" name="logout" id="logout"></button>
+                </form>
             </div>
             
             
             <div id="papeis">
                 {{#each compromissos2}}
-            <div class="paper_sticker {{importancia}}_paper">
-                <p> <b>{{data}} </b> </p>
-                <p> {{lembrete}} </p>
-                <button type="button" name="botao_excluir" class="botao_excluir"></button>
+                <div name="paper_sticker" class="paper_sticker {{importancia}}_paper">
+                    <p> <b>{{data}} </b> </p>
+                    <p> {{titulo}} </p>
+                    <button type="button" name="botao_excluir" class="botao_excluir"></button>
+                    <button type="button" name="botao_editar" class="botao_editar"></button>
+                </div>
+                {{/each}}
             </div>
-             {{/each}}
-            </div>
-           
+            
         </header>
         
-            <nav>
-                
-                <div id="agenda">
-                    <h1> Minha agenda </h1>
-                        <table id="compromissos">
-                            
-                        <colgroup id="col1">
-                            <col/>
-                        </colgroup>
-                            
-                        <colgroup id="col2">
-                            <col/>
-                        </colgroup>
-
-                        <colgroup id="col3">
-                            <col/>
-                        </colgroup>
-
-                        <colgroup id="col4">
-                            <col/>
-                        </colgroup>
-                        
-                        <colgroup id="col5">
-                            <col/>
-                        </colgroup>
-                        
-                       <thead>
+        <nav>
+            
+            <div id="agenda">
+                <h1> Minha agenda </h1>
+                <table id="compromissos">
+                    
+                    <colgroup id="col1">
+                        <col/>
+                    </colgroup>
+                    
+                    <colgroup id="col2">
+                        <col/>
+                    </colgroup>
+                    
+                    <colgroup id="col3">
+                        <col/>
+                    </colgroup>
+                    
+                    <colgroup id="col4">
+                        <col/>
+                    </colgroup>
+                    
+                    <colgroup id="col5">
+                        <col/>
+                    </colgroup>
+                    
+                    <thead>
                         <th>Data</th>
                         <th>Resumo</th>
                         <th></th>
                         <th>Editar</th>
                         <th>Excluir</th>
-                       </thead>
-                       <tbody>
-                       {{#each compromissos1}}
+                    </thead>
+                    <tbody>
+                        {{#each compromissos1}}
                         <tr>
                             
-                             <td class="{{importancia}}">{{data}}</td>
-<td><div id="tit" class="{{importancia}}">{{titulo}}</div> <div name="desc" class="desc retraido">{{lembrete}} <br> Data de Adição: {{data_add}}</div></td>
-                             <td><button type="button" name="botao_detalhes" class="botao_detalhes">+</button></td>
-                             <td><button type="button" name="botao_editar" class="botao_editar"></button></td>
-                             <td><button type="button" name="botao_excluir" class="botao_excluir"></button></td>
+                            <td class="{{importancia}}">{{data}}</td>
+                            <td><div id="tit" class="{{importancia}}">{{titulo}}</div> <div name="desc" class="desc retraido">{{lembrete}} <br> Data de Adição: {{data_add}}</div></td>
+                            <td><button type="button" name="botao_detalhes" class="botao_detalhes">+</button></td>
+                            <td><button type="button" name="botao_editar" class="botao_editar"></button></td>
+                            <td><button type="button" name="botao_excluir" class="botao_excluir"></button></td>
                             
                         </tr>
                         {{/each}}
-                        </tbody>
-                       </table>
-                        </div>
-                
-                <div id="compor">
-                    <form id="comporlem" action="compor_lembrete" method="POST">
-                        <h1> Compor Lembrete </h1>
-                        <p> Data / Importância</p>
-                        <input type="date" id="data" name="data">
-                            <select id="importancia" name="importancia" value="Normal">
-                                <option value="imp_normal">Normal</option>
-                                <option value="imp_alta">Muito importante</option>
-                            </select>
-                            <p> Título </p>
-                            <input type="text" id="titulo" name="titulo">
-                                <p> O que fazer </p>
-                                <input type="text" id="lembrete" name="lembrete">
-                                    <input type="submit" id="adicionar" value="+">
-                                        </form>
-                    <div>
-                        
-                        </nav>
+                    </tbody>
+                </table>
+            </div>
             
-            <script src="home.js"></script>
+            <div id="compor">
+                <form id="comporlem" action="compor_lembrete" method="POST">
+                    <h1> Compor Lembrete </h1>
+                    <p> Data / Importância</p>
+                    <input type="date" id="data" name="data">
+                        <select id="importancia" name="importancia" value="Normal">
+                            <option value="imp_normal">Normal</option>
+                            <option value="imp_alta">Muito importante</option>
+                        </select>
+                        <p> Título </p>
+                        <input type="text" id="titulo" name="titulo">
+                            <p> O que fazer </p>
+                            <input type="text" id="lembrete" name="lembrete">
+                                <input type="submit" id="adicionar" value="+">
+                                    </form>
+                <div>
+                    
+                    </nav>
+        
+        <script src="home.js"></script>
     </body>
 </html>
