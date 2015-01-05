@@ -1,11 +1,20 @@
 
 /* Caixa de edição */
-
+#cont_edit{
+    
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.5;
+    z-index: 1; /* Para bloquear o restante da pagina quando a janela estiver ativa */
+}
 
 #editar_conteudo{
     font-family: 'Architects Daughter', cursive;
     width: 440px;
     height: 400px;
+
     background-color: #fff;
     z-index: 1;
     position: fixed;

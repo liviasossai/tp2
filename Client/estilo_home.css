@@ -130,15 +130,7 @@ nav{
     -moz-box-shadow: 8px 8px 50px -1px rgba(8,8,8,1);
     box-shadow: 8px 8px 50px -1px rgba(8,8,8,1);
     
-    transition:All 0.5s ease;
-    -webkit-transition:All 0.5s ease;
-    -moz-transition:All 0.5s ease;
-    -o-transition:All 0.5s ease;
-    transform: rotate(4deg);
-    -webkit-transform: rotate(4deg);
-    -moz-transform: rotate(4deg);
-    -o-transform: rotate(4deg);
-    -ms-transform: rotate(4deg);
+
     
 
     padding: 15px;
@@ -165,25 +157,50 @@ nav{
 
 
 
+
+#papeis .paper_sticker:nth-child(n):hover{
+    
+    
+    
+    transform: rotate(1deg);
+    -webkit-transform: rotate(1deg);
+    -moz-transform: rotate(1deg);
+    -o-transform: rotate(1deg);
+    -ms-transform: rotate(1deg);
+}
+
+
+#papeis .paper_sticker:nth-child(n){
+    
+    
+    transition:All 0.5s ease;
+    -webkit-transition:All 0.5s ease;
+    -moz-transition:All 0.5s ease;
+    -o-transition:All 0.5s ease;
+}
+
+
 #papeis .paper_sticker:nth-child(1){
     position: absolute;
     
-    top: 80px;
-    left: 150px;
-    
-    /*-ms-transform: rotate(7deg);
+     top: 80px;
+     left: 150px;
+     
+    -ms-transform: rotate(7deg);
     -webkit-transform: rotate(7deg);
-    transform: rotate(7deg);*/
+    transform: rotate(7deg);
 }
+
 
 #papeis .paper_sticker:nth-child(2){
     position: absolute;
     
     top: 80px;
     left: 420px;
-    /*-ms-transform: rotate(-5deg);
+
+    -ms-transform: rotate(-5deg);
     -webkit-transform: rotate(-5deg);
-    transform: rotate(-5deg);*/
+    transform: rotate(-5deg);
 }
 
 
@@ -192,9 +209,10 @@ nav{
     
     top: 80px;
     left: 670px;
-    /*-ms-transform: rotate(-5deg);
+
+    -ms-transform: rotate(-5deg);
      -webkit-transform: rotate(-5deg);
-    transform: rotate(-5deg);*/
+    transform: rotate(-5deg);
 }
 
 #papeis .paper_sticker:nth-child(4){
@@ -202,9 +220,10 @@ nav{
     
     top: 80px;
     left: 900px;
-   /* -ms-transform: rotate(-5deg);
-    -webkit-transform: rotate(5deg);
-    transform: rotate(5deg);*/
+
+    -ms-transform: rotate(7deg);
+    -webkit-transform: rotate(7deg);
+    transform: rotate(7deg);
 }
 
 #agenda{
@@ -513,6 +532,7 @@ button{
 }
 
 
+
 #logout{
     
     background: url("images/logout.png");
@@ -524,16 +544,7 @@ button{
     
 }
 
-.paper_sticker:hover{
-    
 
-    
-    transform: rotate(8deg);
-    -webkit-transform: rotate(8deg);
-    -moz-transform: rotate(8deg);
-    -o-transform: rotate(8deg);
-    -ms-transform: rotate(8deg);
-}
 
 #lemb{
 display: none;

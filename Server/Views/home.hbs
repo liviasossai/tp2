@@ -12,7 +12,7 @@
                                     
                                     </head>
     <body>
-        
+        <div id="cont_edit" class="escondido"> </div>
         <div id="editar_conteudo" class="escondido">
             <button type="button" id="fechar_edicao">×</button>
             <div id="head_edicao">
@@ -20,7 +20,6 @@
             </div>
             
             <div id="body_edicao">
-                <form id="comporlem" action="editar_lembrete" method="POST">
                     <table>
                         
                         <tr>
@@ -40,15 +39,15 @@
                         </tr>
                         <tr>
                             <td><p> O que fazer: </p></td>
-                            <td><input type="text" id="lembrete_edit" name="lembrete_edit"></td>
+                            <td><textarea id="lembrete_edit" name="lembrete_edit"></textarea></td>
                         </tr>
                         <tr>
-                            <td><input type="submit" id="modificar" value="Pronto!"></td>
+                            <td><input type="button" id="modificar" value="Pronto!"></td>
                         </tr>
                     </table>
-                </form>
             </div>
         </div>
+       
         
         
         <header>
@@ -66,11 +65,11 @@
             
             <div id="papeis">
                 {{#each compromissos2}}
-                <div name="paper_sticker" class="paper_sticker {{importancia}}">
+                <div id="{{_id}}" name="paper_sticker" class="paper_sticker {{importancia}}">
                     <p id="data_evento_{{_id}}"> <b>{{data}} </b> </p>
                     <p id="titulo_evento_{{_id}}"> {{titulo}} </p>
                     <p id="lem_evento_{{_id}}" class="escondido"> {{lembrete}} | Data de Adição: {{data_add}}</p>
-                    <button type="button" id="{{_id}}" name="botao_excluir" class="botao_excluir"></button>
+                    <button type="button" id="botao_excluir_{{_id}}" name="botao_excluir" class="botao_excluir"></button>
                     <button type="button" id="{{_id}}" name="botao_editar" class="botao_editar"></button>
                 </div>
                 {{/each}}
@@ -113,13 +112,13 @@
                     </thead>
                     <tbody>
                         {{#each compromissos1}}
-                        <tr>
+                        <tr id="{{_id}}">
                             
                             <td id="data_evento_{{_id}}" class="{{importancia}}">{{data}}</td>
                             <td><div id="titulo_evento_{{_id}}" class="{{importancia}}">{{titulo}}</div> <div id="lem_evento_{{_id}}" name="desc" class="desc retraido">{{lembrete}} | Data de Adição: {{data_add}}</div></td>
                             <td><button type="button" name="botao_detalhes" class="botao_detalhes">+</button></td>
-                            <td><button type="button" id="{{_id}}" name="botao_editar" class="botao_editar"></button></td>
-                            <td><button type="button" id="{{_id}}" name="botao_excluir" class="botao_excluir"></button></td>
+                            <td><button type="button" id="botao_editar_{{_id}}" name="botao_editar" class="botao_editar"></button></td>
+                            <td><button type="button" id="botao_excluir_{{_id}}" name="botao_excluir" class="botao_excluir"></button></td>
                             
                         </tr>
                         {{/each}}
@@ -139,7 +138,7 @@
                         <p> Título </p>
                         <input type="text" id="titulo" name="titulo">
                             <p> O que fazer </p>
-                            <input type="text" id="lembrete" name="lembrete">
+                            <textarea id="lembrete" name="lembrete"></textarea>
                                 <input type="submit" id="adicionar" value="+">
                                     </form>
                 <div>

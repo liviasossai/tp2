@@ -98,9 +98,35 @@ app.post('/compor_lembrete', function(req, res) {
          compromissos2: compromissos2
          };
          
-        res.render('home', dados);
+        res.render('home', dados);});
     
+
+app.post('/excluir', function(req, res) {
+
+         var excluir = require('./excluir.js');
+         excluir(req.user._id, req.body.id_excluir);
+         res.send("ok");
 });
+
+app.post('/editar', function(req, res) {
+         
+         
+         var editar = require('./editar.js');
+         
+ 
+          editar(req, req.body.id_editar);
+         
+         var compromissos1 = req.user.compromissos.slice();
+         var compromissos2 = compromissos1.splice(0, 4);
+         
+         
+         var dados = { username: req.user.username,
+         compromissos1: compromissos1,
+         compromissos2: compromissos2
+         };
+         
+         res.render('home', dados);});
+
 
 app.get('/logout', function(req, res) {
            console.log(req);
