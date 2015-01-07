@@ -4,7 +4,7 @@
     <title>principal</title>
     <link rel="stylesheet" href="estilo_index.css">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link href='http://fonts.googleapis.com/css?family=Damion' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Damion" rel="stylesheet" type="text/css">
      <link href='http://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
      <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
             
@@ -14,8 +14,8 @@
             
             
             <header>
-            <h1> [Nome do app - a decidir] </h1>
-            <h2> O seu gerenciador de atividades </h2>
+            <h1> Procrastinator </h1>
+            <h2> O seu <strike>gerenciador</strike> adiador de atividades </h2>
             
             </header>
             
@@ -28,12 +28,10 @@
             </div>
             
             <div id="log_in" class="caixa">
-            <h2> Entre </h2><hr><br>
-            <form id="login" action="login" method="POST">
+            <h2> Entre </h2><p id="mes_erro" class="erro"></p><hr><br>
             <b>Nome de Usuário </b> <input type="text" id="username" name="username"><br><br>
             <b>Senha</b> <input type="password" id="password" name="password"><br><br>
-            <input type="submit" value="Entrar"><br><br>
-            </form>
+            <input type="button" id="log" value="Entrar"><br><br>
             </div>
             
             <div id="ou">
@@ -41,19 +39,17 @@
             </div>
             
             <div id="registro" class="caixa">
-            <h2> Registre-se </h2><hr><br>
-            <form id="registrar" action="registrar" method="POST">
-            <b>Nome de Usuário </b><input type="text" id="username" name="username"><br><br>
-            <b>Senha </b><input type="password" id="password" name="password"><br><br>
-            <b>Repita a senha </b><input type="password" id="password2" name="password2"><br><br>
-            <b>e-mail</b><input type="text" id="email" name="email"><br><br>
-            <input type="submit" value="Pronto!"><br><br>
-            </form>
+            <h2> Registre-se </h2><p id="mes_erro_reg" class="erro"></p><hr><br>
+            <b>Nome de Usuário </b><input type="text" id="username_reg" name="username"><br><br>
+            <b>Senha </b><input type="password" id="password_reg" name="password"><br><br>
+            <b>Repita a senha </b><input type="password" id="password2_reg" name="password2"><br><br>
+            <b>e-mail</b><input type="email" id="email" name="email"><br><br>
+            <input type="button" id="reg" value="Pronto!"><br><br>
             
             </div>
             
             </div>
             
-            
+            <script src="login.js"></script>
             </body>
 </html>

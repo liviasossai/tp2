@@ -44,17 +44,30 @@ app.get('/', function(req, res) {
 
 // --- DEFINIÇÃO DAS ROTAS ---
 
-app.post('/login', passport.authenticate('login', {
+/*app.post('/login', passport.authenticate('login', {
                                          successRedirect: '/home',
                                          failureRedirect: '/',
                                          failureFlash : true
-                                         }));
+                                         }));*/
 
-app.post('/registrar', passport.authenticate('registro', {
+
+app.post('/login',
+         passport.authenticate('login'),
+         function(req, res) {
+         res.redirect('/home');
+         });
+
+/*app.post('/registrar', passport.authenticate('registro', {
 		successRedirect: '/home',
 		failureRedirect: '/registro',
 		failureFlash : true  
-	}));
+	}));*/
+
+app.post('/registrar',
+         passport.authenticate('registro'),
+         function(req, res) {
+         res.redirect('/home');
+         });
 
 
 
@@ -71,8 +84,8 @@ app.get('/home', function(req, res) {
         };
         
         //req.user.compromissos = compromissos2 + compromissos1;
-        console.log("comp1: ");
-        console.log(req.user.compromissos);
+        //console.log("comp1: ");
+        //console.log(req.user.compromissos);
         
         res.render('home', dados);
         
@@ -112,9 +125,18 @@ app.post('/editar', function(req, res) {
          
          
          var editar = require('./editar.js');
+         req.body.data_add = "";
+         var today = new Date();
+         var dd = today.getDate();
+         var mm = today.getMonth()+1;
+         var yyyy = today.getFullYear();
          
+         req.body.data_add = dd+'-'+mm+'-'+yyyy;
+
  
           editar(req, req.body.id_editar);
+         
+    
          
          var compromissos1 = req.user.compromissos.slice();
          var compromissos2 = compromissos1.splice(0, 4);
@@ -125,7 +147,7 @@ app.post('/editar', function(req, res) {
          compromissos2: compromissos2
          };
          
-         res.render('home', dados);});
+         res.render('stickers', dados);});
 
 
 app.get('/logout', function(req, res) {

@@ -49,7 +49,7 @@ input{
     
 }
 
-input[type="submit"]{
+input[type="button"]{
     background-color: #EEE;
     border-width:1px;
     border-style: solid;
@@ -140,4 +140,10 @@ header > h2{
     font-weight: normal;
 }
 
+.erro{
+    color: red;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    
+}
 
