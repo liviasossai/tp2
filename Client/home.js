@@ -38,6 +38,46 @@ var logout = document.getElementById("logout");
 logout.addEventListener("click", function(){ alert("Até breve!"); });
 
 
+// -- Concluir tarefa
+
+
+var concluir_atual;
+var concluir = document.getElementsByName("botao_concluido");
+
+for(var i = 0; i < concluir.length; i++){
+    adiciona4(i, concluir);
+}
+
+function adiciona4(n, elem){
+
+    
+    
+    elem[n].addEventListener("click", function(){
+                             concluir_atual = elem[n].id;
+                             var exc = concluir_atual.substring(16, concluir_atual.length);
+                             document.getElementById(exc).className = "escondido"; // Torna os dados invisíveis, mas os exclui do bd, evitando uma nova requisição
+                             httpPost("concluir", JSON.stringify({"id": exc,
+                                                                 "data": document.getElementById("data_evento_"+exc).innerText,
+                                                               "titulo": document.getElementById("titulo_evento_"+exc).innerText,
+                                                               "lembrete": document.getElementById("lem_evento_"+exc).innerHTML,
+                                                               "status": "sim"
+                                                               }), callback_concluir);
+                             });
+    
+
+   
+    
+}
+
+
+function callback_concluir(){
+    //alert(this.responseText);
+}
+
+
+
+
+
 // -- Exibir/editar --
 
 var editar_atual;
@@ -144,12 +184,42 @@ function callback_editar(){
                 adiciona(i);
             }
             
+            for(var i = 0; i < concluir.length; i++){
+                adiciona4(i, concluir);
+            }
+            
         } else {
             console.log('Erro ao curtir post. Código ' +
                         'da resposta HTTP: ' + this.status);
         }
     }
 }
+
+
+// -- Exibir histórico
+
+var exibir_historico = document.getElementById("botao_exibir_hist");
+
+
+exibir_historico.addEventListener("click", function(){
+                                  
+                                  httpPost("historico", "", callback_historico);
+                                  
+                                  });
+
+function callback_historico(){
+
+    document.getElementById("body_historico").innerHTML = this.responseText;
+    document.getElementById("cont_historico").className = "visivel";
+    document.getElementById("historico").className = "visivel";
+
+}
+
+
+// -- Para fechar a popup de histórico: --
+var fecha_edicao = document.getElementById("fechar_historico");
+fecha_edicao.addEventListener("click", function(){ document.getElementById("cont_historico").className = "escondido";
+                              document.getElementById("historico").className = "escondido";});
 
 
 

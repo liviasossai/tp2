@@ -71,6 +71,35 @@ app.post('/registrar',
 
 
 
+app.post('/concluir', function(req, res) {
+        
+         console.log("usuario");
+         console.log(req.body);
+        var concluir = require('./concluir.js');
+        concluir(req, res);
+        
+        //req.user.compromissos = compromissos2 + compromissos1;
+        //console.log("comp1: ");
+        //console.log(req.user.compromissos);
+        
+        res.send(req.compromissos_concluidos);
+        
+        });
+
+app.post('/historico', function(req, res) {
+         
+         
+         //req.user.compromissos = compromissos2 + compromissos1;
+         //console.log("comp1: ");
+         //console.log(req.user.compromissos);
+         
+        var comp = {compromissos_concluidos: req.user.compromissos_concluidos};
+         
+         res.render('tabela', comp);
+         
+         });
+
+
 app.get('/home', function(req, res) {
         
 

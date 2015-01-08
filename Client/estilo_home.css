@@ -84,10 +84,10 @@ nav{
     right: 50%;
     left: 50%;
     
-    margin-left: -490px;
-    margin-right: -490px;
+    margin-left: -500px;
+    margin-right: -500px;
     
-    width: 980px;
+    width: 1000px;
     height: 100%;
     z-index: -1;
     
@@ -107,7 +107,7 @@ nav{
     border-right-width: 2px;
     border-bottom-width:0px;
     
-    width: 650px;
+    width: 700px;
     height: 100%;
 }
 
@@ -244,7 +244,7 @@ nav{
     top: 0px;
     right: 0px;
     
-    width: 330px;
+    width: 300px;
     height: 100%;
     padding-top: 15px;
 }
@@ -365,11 +365,12 @@ nav{
     border-collapse: collapse;
     font-family: 'Roboto', sans-serif;
     position: absolute;
-    right: 50%;
-    left: 50%;
-    width:550px;
-    margin-right: -295px;
-    margin-left: -295px;
+    //right: 50%;
+    left: 0%;
+    width:680px;
+    //margin-right: 0px;
+    margin-left: 0px;
+    top: 100px;
     
 }
 
@@ -381,7 +382,7 @@ nav{
 
 
 
-#compromissos #col1, #col3, #col4{
+#compromissos #col1, #col3/*, #col4, #col5*/{
     border-style: solid;
     border-top-width: 0px;
     border-bottom-width: 0px;
@@ -399,7 +400,7 @@ nav{
     border-right-width: 0px;
     border-left-width: 0px;
     border-color: #ddd;
-    padding: 15px
+    padding: 5px
 }
 
 .retraido {
@@ -498,6 +499,30 @@ button:hover{
     opacity: 0.5;
 }
 
+.botao_concluido{
+    
+    background: url("images/check.png");
+    background-repeat: no-repeat;
+    background-position: top left;
+    
+    
+    
+    width: 20px;
+    height: 20px;
+    
+    position: relative;
+    
+    left: 50%;
+    right:50%;
+    
+    margin-left: -10px;
+    margin-right: -10px;
+    
+    width: 20px;
+    
+    
+}
+
 button{
     border-style: solid;
     border-width: 0px;
@@ -517,11 +542,21 @@ button{
     right:0%;
     left:0%;
     margin-right: 0px;
-    margin-left: 170px;
+    margin-left: 120px;
 
 }
 
 .paper_sticker button.botao_editar{
+    position: absolute;
+    bottom: 2px;
+    right:0%;
+    left:0%;
+    margin-right: 0px;
+    margin-left: 170px;
+    
+}
+
+.paper_sticker button.botao_concluido{
     position: absolute;
     bottom: 2px;
     right:0%;

@@ -49,6 +49,15 @@
         </div>
         
         
+        <div id="cont_historico" class="escondido"></div>
+        <div id="historico" class="escondido">
+            <button type="button" id="fechar_historico">×</button>
+            <div id="head_historico">
+                <h1> Histórico de Tarefas </h1>
+            </div>
+            <div id="body_historico">
+            </div>
+        </div>
         
         <header>
             <div class="top_cabecalho" id="top_left">
@@ -69,6 +78,7 @@
                         <p id="lem_evento_{{_id}}" class="escondido"> {{lembrete}} | {{data_add}}</p>
                         <button type="button" id="botao_excluir_{{_id}}" name="botao_excluir" class="botao_excluir"></button>
                         <button type="button" id="{{_id}}" name="botao_editar" class="botao_editar"></button>
+                        <button type="button" id="botao_concluido_{{_id}}" name="botao_concluido" class="botao_concluido"></button>
                     </div>
                     {{/each}}
                 </div>
@@ -101,12 +111,17 @@
                         <col/>
                     </colgroup>
                     
+                    <colgroup id="col6">
+                        <col/>
+                    </colgroup>
+                    
                     <thead>
                         <th>Data</th>
                         <th>Resumo</th>
                         <th></th>
                         <th>Editar</th>
                         <th>Excluir</th>
+                        <th>Concluir</th>
                     </thead>
                     <tbody id="tabela_agenda">
                         {{#each compromissos1}}
@@ -117,11 +132,13 @@
                             <td><button type="button" name="botao_detalhes" class="botao_detalhes">+</button></td>
                             <td><button type="button" id="{{_id}}" name="botao_editar" class="botao_editar"></button></td>
                             <td><button type="button" id="botao_excluir_{{_id}}" name="botao_excluir" class="botao_excluir"></button></td>
-                            
+                            <td><button type="button" id="botao_concluido_{{_id}}" name="botao_concluido" class="botao_concluido"></button></td>
                         </tr>
                         {{/each}}
                     </tbody>
                 </table>
+                
+                <button type="button" id="botao_exibir_hist" name="botao_exibir_hist"> Histórico </button>
             </div>
             
             <div id="compor">

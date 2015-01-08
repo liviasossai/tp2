@@ -47,7 +47,7 @@
     display: block;
 }
 
-#fechar_edicao{
+#fechar_edicao, #fechar_historico{
     position: absolute;
     top: 0px;
     right: 0px;
@@ -149,3 +149,152 @@ padding: 5px;
     margin-right: -40px;
     text-align: center;
 font-family: 'Architects Daughter', cursive;}
+
+
+/* Caixa que exibe o histórico */
+/* --------------------------- */
+
+
+
+
+#cont_historico{
+    
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.5;
+    z-index: 1; /* Para bloquear o restante da pagina quando a janela estiver ativa */
+}
+
+#historico{
+    font-family: 'Architects Daughter', cursive;
+    width: 600px;
+    height: 100%;
+    
+    background-color: #fff;
+    z-index: 1;
+    position: fixed;
+    
+    left:50%;
+    right: 50%;
+    margin-right: -300px;
+    margin-left: -300px;
+    
+    top: 0%;
+    
+    border-style: double;
+    border-width:4px;
+    border-radius: 6px;
+    
+    border-color: #aaa;
+    
+    -webkit-box-shadow: 3px 4px 27px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 4px 27px 0px rgba(0,0,0,0.75);
+    box-shadow: 3px 4px 27px 0px rgba(0,0,0,0.75);
+    padding: 10px;
+    
+    overflow: scroll;
+}
+
+#head_historico{
+    position: absolute;
+    top: 20px;
+    left: 0px;
+    background-color: #CBBDF0;
+    width: 620px;
+    height: 60px;
+    border-style: solid;
+    border-color: #999;
+    
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+}
+
+#head_historico h1{
+    font-family: 'Architects Daughter', cursive;
+    font-size: 20px;
+    color: #000;
+    text-align: center;
+}
+
+
+#body_historico{
+    
+    
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    right: 50%;
+    
+    width: 600px;
+    
+    margin-right: -300px;
+    margin-left: -300px;
+
+}
+
+
+#thistorico{
+    border-collapse: collapse;
+    right: 50%;
+    left: 50%;
+    width: 100%
+}
+
+#thistorico td{
+
+font-family: 'Roboto', sans-serif;
+font-size: 14px;
+
+color: #000;
+padding: 5px;
+text-align: center;
+
+
+}
+
+#thistorico tr:nth-child(2n){
+    background-color: #eee;
+}
+
+#thistorico tr:nth-child(2n+1){
+    background-color: #fff;
+}
+
+#thistorico #col1a, #col2a, #col3a{
+    border-style: solid;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+    border-right-width: 1px;
+    border-left-width: 0px;
+    border-color: #ddd;
+    
+}
+
+#thistorico th{
+    border-top-width: 0px;
+    border-style: solid;
+    border-top-width: 0px;
+    border-bottom-width: 1px;
+    border-right-width: 0px;
+    border-left-width: 0px;
+    border-color: #ddd;
+    padding: 5px
+}
+
+.col_lemb{
+    width: 220px;
+}
+
+.col_tit{
+    width: 150px;
+}
+
+.col_status{
+    width: 50px;
+}
+
+

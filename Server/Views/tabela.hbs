@@ -1,11 +1,37 @@
-{{#each compromissos1}}
-<tr id="{{_id}}">
-
-<td id="data_evento_{{_id}}" class="{{importancia}}">{{data}}</td>
-<td><div id="titulo_evento_{{_id}}" class="{{importancia}}">{{titulo}}</div> <div id="lem_evento_{{_id}}" name="desc" class="desc retraido">{{lembrete}} | {{data_add}}</div></td>
-<td><button type="button" name="botao_detalhes" class="botao_detalhes">+</button></td>
-<td><button type="button" id="botao_editar_{{_id}}" name="botao_editar" class="botao_editar"></button></td>
-<td><button type="button" id="botao_excluir_{{_id}}" name="botao_excluir" class="botao_excluir"></button></td>
-
-</tr>
-{{/each}}
+                <table id="thistorico">
+                    
+                    <colgroup id="col1a">
+                        <col/>
+                    </colgroup>
+                    
+                    <colgroup id="col2a">
+                        <col/>
+                    </colgroup>
+                    
+                    <colgroup id="col3a">
+                        <col/>
+                    </colgroup>
+                    
+                    <colgroup id="col4a">
+                        <col/>
+                    </colgroup>
+                    
+                    
+                    <thead>
+                        <th>Data</th>
+                        <th>Título</th>
+                        <th>Descrição</th>
+                        <th>Concluído?</th>
+                    </thead>
+                    <tbody id="tabela_historico">
+                        {{#each compromissos_concluidos}}
+                        <tr id="thist_{{_id}}">
+                            
+                            <td id="tdata_evento_{{_id}}">{{data}}</td>
+                            <td class="col_tit"><div id="ttitulo_evento_{{_id}}">{{titulo}}</div></td>
+                            <td class="col_lemb"><div id="tlem_evento_{{_id}}">{{lembrete}} | {{data_add}}</div></td>
+                            <td class="col_status"><div id="evento_concl_{{_id}}">{{status}}</div></td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
