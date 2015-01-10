@@ -25,13 +25,13 @@
 #tut_cabecalho{
 
 position: fixed;
-width: 400px;
+width: 600px;
 
 left: 50%;
 right: 50%;
 
-margin-left: -200px;
-margin-right: -200px;
+margin-left: -300px;
+margin-right: -300px;
 
 font-family: 'Homemade Apple', cursive;
 
