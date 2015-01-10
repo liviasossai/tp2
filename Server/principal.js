@@ -17,7 +17,7 @@ app.use(passport.session());
 
 // Configuração das views
 app.set('view engine', 'hbs');
-app.set('views', 'server/Views');
+app.set('views', 'Server/Views');
 
 // Configuração do banco de dados
 var dbConfig = require('./db.js');
