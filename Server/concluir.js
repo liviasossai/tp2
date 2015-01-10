@@ -9,7 +9,7 @@ module.exports = function(req, res){
     //console.log("usuario");
     //console.log(req.body);
     
-    var comp = {data: req.body.data, titulo: req.body.titulo, lembrete: req.body.lembrete, data_add: "Data de conclusão: "+req.body.data_add, status: req.body.status};
+    var comp = {data: req.body.data, titulo: req.body.titulo, lembrete: req.body.lembrete, data_add: "Conclusão: "+req.body.data_add, status: req.body.status};
     req.user.compromissos_concluidos.push(comp);
     
     // salvar o lembrete no banco de dados

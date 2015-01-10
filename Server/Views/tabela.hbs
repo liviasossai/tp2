@@ -27,10 +27,10 @@
                         {{#each compromissos_concluidos}}
                         <tr id="thist_{{_id}}">
                             
-                            <td id="tdata_evento_{{_id}}">{{data}}</td>
+                            <td class="col_data" id="tdata_evento_{{_id}}">{{data}}</td>
                             <td class="col_tit"><div id="ttitulo_evento_{{_id}}">{{titulo}}</div></td>
                             <td class="col_lemb"><div id="tlem_evento_{{_id}}">{{lembrete}} | {{data_add}}</div></td>
-                            <td class="col_status"><div id="evento_concl_{{_id}}">{{status}}</div></td>
+                            <td class="col_status"><div id="evento_concl_{{_id}}" class="{{status}}">{{status}}</div></td>
                         </tr>
                         {{/each}}
                     </tbody>

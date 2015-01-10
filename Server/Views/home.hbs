@@ -8,8 +8,10 @@
                     <link rel="stylesheet" href="estilo_caixa_edicao.css">
                         <link href="http://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet" type="text/css">
                             <link href="http://fonts.googleapis.com/css?family=Roboto" rel='stylesheet' type='text/css'>
-                                <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Abel|Sacramento">
+                                <link href="http://fonts.googleapis.com/css?family=Homemade+Apple" rel="stylesheet" type="text/css">
                                     
+
+
                                     </head>
     <body>
         <div id="cont_edit" class="escondido"> </div>
@@ -24,7 +26,7 @@
                     
                     <tr>
                         <td><p> Data: </p></td>
-                        <td><input type="date" id="data_edit" name="data"></td>
+                        <td><input type="text" id="data_edit" name="data"></td>
                     </tr>
                     <tr>
                         <td><p> Importância: </p></td>
@@ -53,7 +55,7 @@
         <div id="historico" class="escondido">
             <button type="button" id="fechar_historico">×</button>
             <div id="head_historico">
-                <h1> Histórico de Tarefas </h1>
+                <h1> Histórico de Atividades </h1>
             </div>
             <div id="body_historico">
             </div>
@@ -61,7 +63,7 @@
         
         <header>
             <div class="top_cabecalho" id="top_left">
-                <p> Próximos Eventos </p>
+                <p> Próximas Atividades </p>
             </div>
             
             <div class="top_cabecalho" id="top_right">
@@ -88,6 +90,8 @@
         <nav>
             
             <div id="agenda">
+                
+                
                 <h1> Minha agenda </h1>
                 <table id="compromissos">
                     
@@ -137,15 +141,16 @@
                         {{/each}}
                     </tbody>
                 </table>
+                <div id="hist">
+                    <button type="button" id="botao_exibir_hist" name="botao_exibir_hist"> Exibir meu histórico de atividades </button>
+                </div>
                 
-                <button type="button" id="botao_exibir_hist" name="botao_exibir_hist"> Histórico </button>
             </div>
             
             <div id="compor">
-                <form id="comporlem" action="compor_lembrete" method="POST">
                     <h1> Compor Lembrete </h1>
                     <p> Data / Importância</p>
-                    <input type="date" id="data" name="data">
+                    <input type="text" id="data" name="data">
                         <select id="importancia" name="importancia" value="Normal">
                             <option value="imp_normal">Normal</option>
                             <option value="imp_alta">Muito importante</option>
@@ -154,12 +159,16 @@
                         <input type="text" id="titulo" name="titulo">
                             <p> O que fazer </p>
                             <textarea id="lembrete" name="lembrete"></textarea>
-                            <input type="submit" id="adicionar" value="+">
-                                </form>
+                            <button id="adicionar">+</button>
                 <div>
+                    
+
                     
                     </nav>
         
+        
+
+
         <script src="home.js"></script>
     </body>
 </html>

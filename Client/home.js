@@ -3,6 +3,8 @@ var t = document.getElementsByName("desc");
 
 var botao = document.getElementsByName("botao_detalhes");
 
+
+
 for(var j = 0; j < botao.length; j++){
     expandidos[j]=false;
 }
@@ -13,8 +15,8 @@ for(var i = 0; i < botao.length; i++){
 }
 
 function adiciona(n){
- botao[n].addEventListener("click", function(){ expandir_retrair(n); });
- }
+    botao[n].addEventListener("click", function(){ expandir_retrair(n); });
+}
 
 
 function expandir_retrair(n){
@@ -49,7 +51,7 @@ for(var i = 0; i < concluir.length; i++){
 }
 
 function adiciona4(n, elem){
-
+    
     
     
     elem[n].addEventListener("click", function(){
@@ -58,14 +60,14 @@ function adiciona4(n, elem){
                              document.getElementById(exc).className = "escondido"; // Torna os dados invisíveis, mas os exclui do bd, evitando uma nova requisição
                              httpPost("concluir", JSON.stringify({"id": exc,
                                                                  "data": document.getElementById("data_evento_"+exc).innerText,
-                                                               "titulo": document.getElementById("titulo_evento_"+exc).innerText,
-                                                               "lembrete": document.getElementById("lem_evento_"+exc).innerHTML,
-                                                               "status": "sim"
-                                                               }), callback_concluir);
+                                                                 "titulo": document.getElementById("titulo_evento_"+exc).innerText,
+                                                                 "lembrete": document.getElementById("lem_evento_"+exc).innerHTML,
+                                                                 "status": "sim"
+                                                                 }), callback_concluir);
                              });
     
-
-   
+    
+    
     
 }
 
@@ -89,9 +91,10 @@ for(var i = 0; i < editar.length; i++){
 }
 // Ao editar, completa os campos com os dados atuais do lembrete
 function adiciona2(n, elem){
-    elem[n].addEventListener("click", function(){ editar_atual = elem[n].id;
-                                                  document.getElementById("editar_conteudo").className = "visivel";
-                                                  document.getElementById("cont_edit").className = "visivel";
+    elem[n].addEventListener("click", function(){
+                             editar_atual = elem[n].id;
+                             document.getElementById("editar_conteudo").className = "visivel";
+                             document.getElementById("cont_edit").className = "visivel";
                              document.getElementById("data_edit").value = document.getElementById("data_evento_"+editar_atual).innerText;
                              document.getElementById("titulo_edit").value = document.getElementById("titulo_evento_"+editar_atual).innerText;
                              document.getElementById("lembrete_edit").value = document.getElementById("lem_evento_"+editar_atual).innerHTML;
@@ -108,7 +111,7 @@ function adiciona3(n, elem){
                              excluir_atual = elem[n].id;
                              var exc = excluir_atual.substring(14, excluir_atual.length);
                              document.getElementById(exc).className = "escondido"; // Torna os dados invisíveis, mas os exclui do bd, evitando uma nova requisição
-
+                             
                              
                              httpPost("excluir", JSON.stringify({"id_excluir": exc}), callback_excluir);
                              });
@@ -117,22 +120,31 @@ function adiciona3(n, elem){
 // -- Para fechar a popup de edição: --
 var fecha_edicao = document.getElementById("fechar_edicao");
 fecha_edicao.addEventListener("click", function(){ document.getElementById("editar_conteudo").className = "escondido";
-                                                   document.getElementById("cont_edit").className = "escondido";});
+                              document.getElementById("cont_edit").className = "escondido";});
 
 
 // -- Para enviar as modificações --
 
 var modifica = document.getElementById("modificar");
 modifica.addEventListener("click", function(){ console.log(editar_atual);
-                                               document.getElementById("editar_conteudo").className = "escondido";
-                                               document.getElementById("cont_edit").className = "escondido";
+                          document.getElementById("editar_conteudo").className = "escondido";
+                          document.getElementById("cont_edit").className = "escondido";
                           
-                                              httpPost("editar", JSON.stringify({"id_editar": editar_atual,
-                                                                                 "data": document.getElementById("data_edit").value,
-                                                                                 "importancia": document.getElementById("importancia_edit").value,
-                                                                                 "titulo": document.getElementById("titulo_edit").value,
-                                                                                 "lembrete": document.getElementById("lembrete_edit").value
-                                                                                 }), callback_editar);
+                          //var data_form = new Date(document.getElementById("data_edit").value);
+                          var hoje = new Date();
+                          
+                          if(isNaN(new Date(transforma_data(document.getElementById("data_edit").value)).getTime())){
+                          alert("Insira uma data válida");
+                          if(new Date(transforma_data(document.getElementById("data_edit").value)).getTime() - new Date(String((hoje.getFullYear())+'/'+(hoje.getMonth()+1)+'/'+ (hoje.getDate()))).getTime() < 0){ alert("Ops! A data inserida deve ser posterior ou igual à data de hoje"); }
+                          }
+                          else{
+                          httpPost("editar", JSON.stringify({"id_editar": editar_atual,
+                                                            "data": document.getElementById("data_edit").value,
+                                                            "importancia": document.getElementById("importancia_edit").value,
+                                                            "titulo": document.getElementById("titulo_edit").value,
+                                                            "lembrete": document.getElementById("lembrete_edit").value
+                                                            }), callback_editar);
+                          }
                           
                           });
 
@@ -208,18 +220,95 @@ exibir_historico.addEventListener("click", function(){
                                   });
 
 function callback_historico(){
-
+    
     document.getElementById("body_historico").innerHTML = this.responseText;
     document.getElementById("cont_historico").className = "visivel";
     document.getElementById("historico").className = "visivel";
-
+    
 }
 
 
 // -- Para fechar a popup de histórico: --
 var fecha_edicao = document.getElementById("fechar_historico");
-fecha_edicao.addEventListener("click", function(){ document.getElementById("cont_historico").className = "escondido";
-                              document.getElementById("historico").className = "escondido";});
+fecha_edicao.addEventListener("click", function(){
+                              document.getElementById("cont_historico").className = "escondido";
+                              document.getElementById("historico").className = "escondido";
+                              document.getElementById("body_historico").innerHTML = "";}
+                              
+                              );
+
+// -- Adicionar lembrete:
+
+var adicionar_lem = document.getElementById("adicionar");
+adicionar_lem.addEventListener("click", function(){
+                               var hoje = new Date();
+                               
+                               
+                               if(isNaN(new Date(transforma_data(document.getElementById("data").value)).getTime())){
+                               alert("Insira uma data válida");
+                               if(new Date(transforma_data(document.getElementById("data").value)).getTime() - new Date(String((hoje.getFullYear())+'/'+(hoje.getMonth()+1)+'/'+ (hoje.getDate()))).getTime() < 0){ alert("Ops! A data inserida deve ser posterior ou igual à data de hoje"); }
+                               }
+                               else{
+                               //var data_form = new Date(document.getElementById("data").value);
+                               
+                               
+                               httpPost("compor_lembrete", JSON.stringify({data: document.getElementById("data").value,
+                                                                          importancia: document.getElementById("importancia").value,
+                                                                          titulo: document.getElementById("titulo").value,
+                                                                          lembrete: document.getElementById("lembrete").value}), callback_adiciona);
+                               }
+                               
+                               });
+
+function callback_adiciona(){
+    
+    document.open();
+    document.write(this.responseText);
+    document.close();
+    
+}
+
+
+
+
+
+
+
+function transforma_data(data){
+    
+    var data_aux = "";
+    var dia = "";
+    var mes = "";
+    var ano = "";
+    
+    var i = 0;
+    
+    while(data[i] != '/'){
+        dia = dia + data[i];
+        i++;
+    }
+    i++;
+    while(data[i] != '/'){
+        mes = mes + data[i];
+        i++;
+    }
+    i++;
+    while(i < data.length){
+        ano = ano + data[i];
+        i++
+    }
+    
+    if(dia.length < 2){
+        dia = "0"+dia;
+    }
+    if(mes.length < 2){
+        mes = "0"+ mes;
+    }
+    
+    data_aux = String(ano+'/'+mes+'/'+dia);
+    return data_aux;
+    
+}
 
 
 

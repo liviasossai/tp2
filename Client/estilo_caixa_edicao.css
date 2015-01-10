@@ -50,7 +50,8 @@
 #fechar_edicao, #fechar_historico{
     position: absolute;
     top: 0px;
-    right: 0px;
+    left: 0px;
+    font-size: 18px;
 }
 
 
@@ -63,7 +64,7 @@
 
 #head_edicao{
     position: absolute;
-    top: 20px;
+    top: 23px;
     left: 0px;
     background-color: #CBBDF0;
     width: 460px;
@@ -169,7 +170,7 @@ font-family: 'Architects Daughter', cursive;}
 
 #historico{
     font-family: 'Architects Daughter', cursive;
-    width: 600px;
+    width: 700px;
     height: 100%;
     
     background-color: #fff;
@@ -178,8 +179,8 @@ font-family: 'Architects Daughter', cursive;}
     
     left:50%;
     right: 50%;
-    margin-right: -300px;
-    margin-left: -300px;
+    margin-right: -350px;
+    margin-left: -350px;
     
     top: 0%;
     
@@ -199,10 +200,10 @@ font-family: 'Architects Daughter', cursive;}
 
 #head_historico{
     position: absolute;
-    top: 20px;
+    top: 23px;
     left: 0px;
     background-color: #CBBDF0;
-    width: 620px;
+    width: 720px;
     height: 60px;
     border-style: solid;
     border-color: #999;
@@ -229,10 +230,10 @@ font-family: 'Architects Daughter', cursive;}
     left: 50%;
     right: 50%;
     
-    width: 600px;
+    width: 680px;
     
-    margin-right: -300px;
-    margin-left: -300px;
+    margin-right: -340px;
+    margin-left: -340px;
 
 }
 
@@ -247,11 +248,11 @@ font-family: 'Architects Daughter', cursive;}
 #thistorico td{
 
 font-family: 'Roboto', sans-serif;
-font-size: 14px;
+font-size: 12px;
 
 color: #000;
-padding: 5px;
-text-align: center;
+padding: 10px;
+
 
 
 }
@@ -275,6 +276,8 @@ text-align: center;
 }
 
 #thistorico th{
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
     border-top-width: 0px;
     border-style: solid;
     border-top-width: 0px;
@@ -283,18 +286,65 @@ text-align: center;
     border-left-width: 0px;
     border-color: #ddd;
     padding: 5px
+    font-weight: bold;
 }
 
 .col_lemb{
-    width: 220px;
+    width: 250px;
+    padding: 10px;
+    text-align: justify;
 }
 
 .col_tit{
-    width: 150px;
+    width: 190px;
+    text-align: center;
 }
 
 .col_status{
     width: 50px;
+    text-align: center;
 }
 
+.col_data{
+    width: 80px;
+    text-align: center;
+}
 
+#hist{
+    
+
+    position: absolute;
+    background-color: #fff;
+    height: 40px;
+
+    
+    transform: rotate(-10deg);
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    -o-transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+    width: 170px;
+    
+    padding-left: 20px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    
+     margin-top: -40px;
+    margin-left: -45px;
+   
+}
+
+#botao_exibir_hist{
+    
+    font-size: 13px;
+    color: #3333FF;
+    font-family: 'Homemade Apple', cursive;
+}
+
+.sim{
+    color: green;
+}
+
+.não{
+    color: red;
+}

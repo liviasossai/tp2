@@ -6,30 +6,7 @@ var _ = require('underscore');
 module.exports = function(req, id_lembrete){
   
     
-//   User.findOneAndUpdate({_id: '1234', emailList: 'abc'}, {$set: {'emailList.$': 'ghi'}})
 
-   /* User.findOneAndUpdate({_id: req.user._id}, {$pull: {compromissos: {_id: id_lembrete}}}, function(err, data){
-                          console.log(err, data);
-                          });
-    
-   
-
-    
-    
-    var json = User.find({ _id: req.user._id }).lean().exec(function(err, items) {
-                                                 //addProperty(items);
-                                                            
-                                                 req.user.compromissos = JSON.parse(JSON.stringify(items))[0].compromissos;
-                                                            console.log(req.user.compromissos);
-                                                 });
-    
-    
-   // comp = {data: req.body.data, titulo: req.body.titulo, lembrete: req.body.lembrete, importancia: req.body.importancia, data_add: req.body.data_add};
-    //req.user.compromissos.push(comp);
-
-    */
-    
-    
     
     var i;
     for(i = 0; i < req.user.compromissos.length; i++){
@@ -45,7 +22,7 @@ module.exports = function(req, id_lembrete){
         
     }
     
-    req.user.compromissos = _.sortBy(req.user.compromissos, function(obj) { return new Date(obj.data)});
+    req.user.compromissos = _.sortBy(req.user.compromissos, function(obj) { return new Date(transforma_data(obj.data))});
     
     // salvar o lembrete no banco de dados
     req.user.save(function(err) {
@@ -57,10 +34,42 @@ module.exports = function(req, id_lembrete){
                   
                   });
     
-    //req.user = User.findOne( {$elemMatch: { _id:  req.user._id }}, function(err, user) { console.log("erro"); });
 
-
-    //console.log('usuário upado');
-    //console.log(req.user);
 }
 
+
+function transforma_data(data){
+    
+    var data_aux = "";
+    var dia = "";
+    var mes = "";
+    var ano = "";
+    
+    var i = 0;
+    
+    while(data[i] != '/'){
+        dia = dia + data[i];
+        i++;
+    }
+    i++;
+    while(data[i] != '/'){
+        mes = mes + data[i];
+        i++;
+    }
+    i++;
+    while(i < data.length){
+        ano = ano + data[i];
+        i++
+    }
+    
+    if(dia.length < 2){
+        dia = "0"+dia;
+    }
+    if(mes.length < 2){
+        mes = "0"+ mes;
+    }
+    
+    data_aux = String(ano+'/'+mes+'/'+dia);
+    return data_aux;
+    
+}
