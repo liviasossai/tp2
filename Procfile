@@ -1,1 +1,1 @@
-web: node Server/principal.js
+web: npm start
