@@ -6,6 +6,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1">
                 <link rel="stylesheet" href="estilo_home.css">
                     <link rel="stylesheet" href="estilo_caixa_edicao.css">
+                        <link rel="stylesheet" href="tutorial.css">
                         <link href="http://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet" type="text/css">
                             <link href="http://fonts.googleapis.com/css?family=Roboto" rel='stylesheet' type='text/css'>
                                 <link href="http://fonts.googleapis.com/css?family=Homemade+Apple" rel="stylesheet" type="text/css">
@@ -14,6 +15,42 @@
 
                                     </head>
     <body>
+        
+        <div id="tutorial" class="visivel"></div>
+        <div id="tut_conteudo" class="visivel">
+                <div id="tut_cabecalho">
+                <h1> Novo por aqui, {{username}}? </h1>
+                </div>
+                
+                <div id="tut_hist">
+                  <div id="seta_hist" class="seta"></div>
+                  <div class="texto" id="tex_hist">
+                     <b>N</b>a seção de histórico de atividades você pode acompanhar quais compromissos foram concluídos ou não.<br>
+                     <b>L</b>embrando que eles vão para essa lista automaticamente sempre que sua data estiver ultrapassada.
+                   </div>
+                </div>
+                
+                
+                <div id="tut_quadro">
+                    <div id="seta_quadro" class="seta"></div>
+                    <div class="texto" id="tex_quadro">
+                        <b>E</b>ste é seu quadro de lembretes. Nele são fixados os eventos mais próximos. <br>
+                        <b>Q</b>uando a agenda está muito cheia, são exibidos os 4 compromissos mais próximos e os demais são exibidos na seção "Minha Agenda"
+                    </div>
+                </div>
+                
+                <div id="tut_tab">
+                    <div id="seta_tab" class="seta"></div>
+                    <div class="texto" id="tex_tab">
+                        <b>T</b>erminou um evento antes da data? Basta marcá-lo como concluído (<img src="images/check.png">).<br>
+                        <b>S</b>e um evento for cancelado, basta clicar em <img src="images/delete.png">
+                    </div>
+                </div>
+                
+            <button type="button" id="fechar">Ok, entendi.</button>
+        </div>
+        <script src="tutorial.js"></script>
+        
         <div id="cont_edit" class="escondido"> </div>
         <div id="editar_conteudo" class="escondido">
             <button type="button" id="fechar_edicao">×</button>

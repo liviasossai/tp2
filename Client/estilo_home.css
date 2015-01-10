@@ -66,6 +66,23 @@ body{
     
 }
 
+#num_acessos{
+
+width: 150px;
+position: absolute;
+   left: 0%;
+    top: 0%;
+    margin-top: 220px;
+    margin-left: 5px;
+    
+    font-family: 'Architects Daughter', cursive;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ADFDAB;
+    
+
+}
+
 
 .top_cabecalho p{
     color: #000;

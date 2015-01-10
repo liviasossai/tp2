@@ -1,0 +1,186 @@
+#tutorial{
+    
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.5;
+    z-index: 1; /* Para bloquear o restante da pagina quando a janela estiver ativa */
+}
+
+#tut_conteudo{
+    position: absolute;
+    width: 900px;
+    height: 100%;
+    z-index: 1;
+    
+    left: 50%;
+    right: 50%;
+    
+    margin-right: -450px;
+    margin-left: -450px;
+
+}
+
+#tut_cabecalho{
+
+position: fixed;
+width: 400px;
+
+left: 50%;
+right: 50%;
+
+margin-left: -200px;
+margin-right: -200px;
+
+font-family: 'Homemade Apple', cursive;
+
+color: #fff;
+
+
+}
+
+#tut_cabecalho h1{
+    text-align: center;
+    font-size: 32px;
+    color: #ADFDAB;
+}
+
+#fechar{
+
+background-color: transparent;
+
+font-family: 'Architects Daughter', cursive;
+font-size: 20px;
+
+
+border: solid;
+border-bottom-width 2px;
+border-bottom-color: #A091E9;
+
+border-left-width: 0px;
+border-top-width: 0px;
+border-right-width: 0px;
+
+
+position: fixed;
+
+width: 180px;
+
+left: 50%;
+right: 50%;
+
+bottom: 15px;
+
+margin-left: -90px;
+margin-right: -90px;
+
+color: #fff;
+
+
+}
+
+#fechar:hover{
+    color: #A091E9;
+}
+
+
+
+.seta{
+    
+    width:200px;
+    height: 168px;
+    background-image: url("images/arrow.png");
+
+}
+
+
+#tut_hist{
+
+position: absolute;
+
+
+
+}
+
+
+
+.texto{
+    font-family: 'Architects Daughter', cursive;
+    font-size: 16px;
+    color: #fff;
+    text-align: justify;
+    border: solid;
+    border-width: 0px;
+    border-right-width: 2px;
+    border-right-color: #A091E9;
+    padding: 7px
+}
+
+#tex_hist{
+
+width: 300px;
+
+left: 0%;
+margin-left: 160px;
+margin-top: -90px;
+
+
+}
+
+#seta_hist{
+    
+    margin-top: 370px;
+    margin-left: -30px;
+
+transform: rotate(15deg);
+-webkit-transform: rotate(15deg);
+-moz-transform: rotate(15deg);
+-o-transform: rotate(15deg);
+-ms-transform: rotate(15deg);
+}
+
+
+#tex_quadro{
+    width: 320px;
+    left: 0%;
+    top: 0%;
+    margin-left: 210px;
+    margin-top: -110px;
+
+}
+
+#seta_quadro{
+    
+    margin-top: 80px;
+    transform: rotate(-15deg);
+    -webkit-transform: rotate(-15deg);
+    -moz-transform: rotate(-15deg);
+    -o-transform: rotate(-15deg);
+    -ms-transform: rotate(-15deg);
+}
+
+#seta_tab{
+margin-top: -30px;
+margin-left: 580px;
+
+transform: rotate(-80deg);
+-webkit-transform: rotate(-80deg);
+-moz-transform: rotate(-80deg);
+-o-transform: rotate(-80deg);
+-ms-transform: rotate(-80deg);
+
+}
+
+#tex_tab{
+    
+    margin-top: -280px;
+    margin-left: 600px;
+    width: 300px;
+}
+
+
+b{
+color: #ADFDAB;
+font-size: 18px;
+}

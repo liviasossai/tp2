@@ -60,7 +60,7 @@ app.post('/login',
          // Eles são adicionados ao histórico com status "não concluído"
          
          //var comp_concl = req.user.compromissos_concluidos;
-         var excl = ['0'];
+         var excl = [];
          
          for(var i = 0; i < req.user.compromissos.length; i++){
          if(new Date(transforma_data(req.user.compromissos[i].data)).getTime() - new Date(today).getTime() < 0){
@@ -71,7 +71,7 @@ app.post('/login',
          
          }
          
-         
+         req.user.num_acessos = parseInt(String(req.user.num_acessos))+1;
          req.user.save(function(err) {
                        if (err){
                        console.log('Erro ao salvar usuário: '+err);
@@ -83,6 +83,8 @@ app.post('/login',
          for(var i = 0; i < excl.length; i++){
          excluir(req.user._id, excl[i]);
          }
+         
+         
          
          res.redirect('/home');
          });
@@ -136,15 +138,19 @@ app.get('/home', function(req, res) {
         
         
         var dados = { username: req.user.username,
+        num_acessos: req.user.num_acessos,
         compromissos1: compromissos1,
         compromissos2: compromissos2
         };
         
-        //req.user.compromissos = compromissos2 + compromissos1;
-        //console.log("comp1: ");
-        //console.log(req.user.compromissos);
+        var pag_render = 'home';
         
-        res.render('home', dados);
+        if(req.user.num_acessos == "1"){
+        pag_render = 'home_tutorial';
+        }
+        
+        
+        res.render(pag_render, dados);
         
         });
 
@@ -164,6 +170,7 @@ app.post('/compor_lembrete', function(req, res) {
          
          
          var dados = { username: req.user.username,
+         num_acessos: req.user.num_acessos,
          compromissos1: compromissos1,
          compromissos2: compromissos2
          };

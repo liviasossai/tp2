@@ -130,10 +130,16 @@ modifica.addEventListener("click", function(){ console.log(editar_atual);
                           document.getElementById("editar_conteudo").className = "escondido";
                           document.getElementById("cont_edit").className = "escondido";
                           
-                          //var data_form = new Date(document.getElementById("data_edit").value);
+
+                          
                           var hoje = new Date();
                           
-                          if(isNaN(new Date(transforma_data(document.getElementById("data_edit").value)).getTime())){
+                          
+                          if(document.getElementById("data_edit").value.length == 0 || document.getElementById("titulo_edit").value.length == 0){
+                          alert("Data e título são obrigatórios");
+                          }
+                          
+                          else if(isNaN(new Date(transforma_data(document.getElementById("data_edit").value)).getTime())){
                           alert("Insira uma data válida");
                           if(new Date(transforma_data(document.getElementById("data_edit").value)).getTime() - new Date(String((hoje.getFullYear())+'/'+(hoje.getMonth()+1)+'/'+ (hoje.getDate()))).getTime() < 0){ alert("Ops! A data inserida deve ser posterior ou igual à data de hoje"); }
                           }
@@ -243,13 +249,15 @@ var adicionar_lem = document.getElementById("adicionar");
 adicionar_lem.addEventListener("click", function(){
                                var hoje = new Date();
                                
+                               if(document.getElementById("data").value.length == 0 || document.getElementById("titulo").value.length == 0){
+                               alert("Data e título são obrigatórios");
+                               }
                                
-                               if(isNaN(new Date(transforma_data(document.getElementById("data").value)).getTime())){
+                               else if(isNaN(new Date(transforma_data(document.getElementById("data").value)).getTime())){
                                alert("Insira uma data válida");
                                if(new Date(transforma_data(document.getElementById("data").value)).getTime() - new Date(String((hoje.getFullYear())+'/'+(hoje.getMonth()+1)+'/'+ (hoje.getDate()))).getTime() < 0){ alert("Ops! A data inserida deve ser posterior ou igual à data de hoje"); }
                                }
                                else{
-                               //var data_form = new Date(document.getElementById("data").value);
                                
                                
                                httpPost("compor_lembrete", JSON.stringify({data: document.getElementById("data").value,

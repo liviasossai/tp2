@@ -5,5 +5,6 @@ module.exports = mongoose.model('User',{
     password: String,
     email: String,
     compromissos: [{data: String, titulo: String, lembrete: String, importancia: String, data_add: String}],
-    compromissos_concluidos: [{data: String, titulo: String, lembrete: String, data_add: String, status: String}]
+    compromissos_concluidos: [{data: String, titulo: String, lembrete: String, data_add: String, status: String}],
+                                num_acessos: String
 });

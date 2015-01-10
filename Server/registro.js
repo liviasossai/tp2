@@ -28,6 +28,7 @@ module.exports = function(passport){
 
                         newUser.username = username;
                         newUser.password = createHash(password);
+                        newUser.num_acessos = "1"; // 1o acesso
                         newUser.email = req.param('email');
 
                         // salvar usuário no banco de dados

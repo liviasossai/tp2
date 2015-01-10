@@ -1,7 +1,12 @@
 var login = document.getElementById("log");
 login.addEventListener("click", function(){ // Obs.: Encontrar uma maneira mais segura de enviar a senha
+                       if(document.getElementById("password").value.length == 0 || document.getElementById("username").value == 0){
+                       document.getElementById("mes_erro").innerText = "Campos obrigatórios";
+                       }
+                       else{
                        httpPost("login", JSON.stringify({"username": document.getElementById("username").value,
                                           "password": document.getElementById("password").value}), callback_login);
+                       }
                                     });
 
 
@@ -9,9 +14,11 @@ login.addEventListener("click", function(){ // Obs.: Encontrar uma maneira mais 
 
 var login = document.getElementById("reg");
 login.addEventListener("click", function(){ // Obs.: Encontrar uma maneira mais segura de enviar a senha
-                       
-                       
-    if((document.getElementById("password_reg").value == document.getElementById("password2_reg").value) && document.getElementById("password2_reg").value.length >= 6){
+               
+                       if(document.getElementById("password2_reg").value.length == 0 || document.getElementById("password_reg").value.length == 0 || document.getElementById("username_reg").value == 0){
+                       document.getElementById("mes_erro_reg").innerText = "Campos obrigatórios";
+                       }
+    else if((document.getElementById("password_reg").value == document.getElementById("password2_reg").value) && document.getElementById("password2_reg").value.length >= 6){
                        httpPost("registrar", JSON.stringify({"username": document.getElementById("username_reg").value,
                                                         "password": document.getElementById("password_reg").value}), callback_registrar);
                        
