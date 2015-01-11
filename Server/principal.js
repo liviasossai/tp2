@@ -162,7 +162,7 @@ app.post('/compor_lembrete', function(req, res) {
          var mm = today.getMonth()+1;
          var yyyy = today.getFullYear();
          
-         req.body.data_add = dd+'-'+mm+'-'+yyyy;
+         req.body.data_add = dd+'/'+mm+'/'+yyyy;
          compor(req, res);
          
          var compromissos1 = req.user.compromissos.slice();

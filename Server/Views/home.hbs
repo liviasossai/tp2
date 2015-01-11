@@ -79,7 +79,7 @@
                     <div id="{{_id}}" name="paper_sticker" class="paper_sticker {{importancia}}">
                         <p id="data_evento_{{_id}}"> <b>{{data}} </b> </p>
                         <p id="titulo_evento_{{_id}}"> {{titulo}} </p>
-                        <p id="lem_evento_{{_id}}" class="escondido"> {{lembrete}} | {{data_add}}</p>
+                        <p id="lem_evento_{{_id}}" class="escondido"> {{lembrete}}</p> <p id="data_add_{{_id}}" class="escondido"> {{data_add}}</p>
                         <button type="button" id="botao_excluir_{{_id}}" name="botao_excluir" class="botao_excluir"></button>
                         <button type="button" id="{{_id}}" name="botao_editar" class="botao_editar"></button>
                         <button type="button" id="botao_concluido_{{_id}}" name="botao_concluido" class="botao_concluido"></button>
@@ -135,7 +135,7 @@
                         <tr id="{{_id}}">
                             
                             <td id="data_evento_{{_id}}" class="{{importancia}}">{{data}}</td>
-                            <td><div id="titulo_evento_{{_id}}" class="{{importancia}}">{{titulo}}</div> <div id="lem_evento_{{_id}}" name="desc" class="desc retraido">{{lembrete}} | {{data_add}}</div></td>
+                            <td><div id="titulo_evento_{{_id}}" class="{{importancia}}">{{titulo}}</div> <div name="desc" class="desc retraido"><div id="lem_evento_{{_id}}"> {{lembrete}}</div> <div id="data_add_{{_id}}"> {{data_add}}</div></div></td>
                             <td><button type="button" name="botao_detalhes" class="botao_detalhes">+</button></td>
                             <td><button type="button" id="{{_id}}" name="botao_editar" class="botao_editar"></button></td>
                             <td><button type="button" id="botao_excluir_{{_id}}" name="botao_excluir" class="botao_excluir"></button></td>
