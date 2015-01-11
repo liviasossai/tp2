@@ -255,7 +255,7 @@ adicionar_lem.addEventListener("click", function(){
                                alert("Data e título são obrigatórios");
                                }
                                
-                               else if(!isNaN(new Date(transforma_data(document.getElementById("data").value)).getTime())){
+                               else if(isNaN(new Date(transforma_data(document.getElementById("data").value)).getTime())){
                                alert("Insira uma data válida");
                                }
                                else if(new Date(transforma_data(document.getElementById("data").value)).getTime() - new Date(String((hoje.getFullYear())+'/'+(hoje.getMonth()+1)+'/'+ (hoje.getDate()))).getTime() < 0){ alert("Ops! A data inserida deve ser posterior ou igual à data de hoje");
