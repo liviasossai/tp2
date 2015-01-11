@@ -16,7 +16,6 @@ module.exports = function(req, id_lembrete){
             req.user.compromissos[i].titulo = req.body.titulo;
             req.user.compromissos[i].lembrete = req.body.lembrete;
             req.user.compromissos[i].importancia = req.body.importancia;
-            req.user.compromissos[i].data_add =  "Data da última edição: "+req.body.data_add;
             break;
         }
         
