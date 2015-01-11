@@ -139,7 +139,7 @@ modifica.addEventListener("click", function(){ console.log(editar_atual);
                           alert("Data e título são obrigatórios");
                           }
                           
-                          else if(isNaN(new Date(transforma_data(document.getElementById("data_edit").value)).getTime())){
+                          else if(!isNaN(new Date(transforma_data(document.getElementById("data_edit").value)).getTime())){
                           alert("Insira uma data válida");
                           if(new Date(transforma_data(document.getElementById("data_edit").value)).getTime() - new Date(String((hoje.getFullYear())+'/'+(hoje.getMonth()+1)+'/'+ (hoje.getDate()))).getTime() < 0){ alert("Ops! A data inserida deve ser posterior ou igual à data de hoje"); }
                           }
@@ -253,7 +253,7 @@ adicionar_lem.addEventListener("click", function(){
                                alert("Data e título são obrigatórios");
                                }
                                
-                               else if(isNaN(new Date(transforma_data(document.getElementById("data").value)).getTime())){
+                               else if(!isNaN(new Date(transforma_data(document.getElementById("data").value)).getTime())){
                                alert("Insira uma data válida");
                                if(new Date(transforma_data(document.getElementById("data").value)).getTime() - new Date(String((hoje.getFullYear())+'/'+(hoje.getMonth()+1)+'/'+ (hoje.getDate()))).getTime() < 0){ alert("Ops! A data inserida deve ser posterior ou igual à data de hoje"); }
                                }
