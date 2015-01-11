@@ -189,13 +189,13 @@ app.post('/editar', function(req, res) {
          
          
          var editar = require('./editar.js');
-         req.body.data_add = "";
+         /*req.body.data_add = "";
          var today = new Date();
          var dd = today.getDate();
          var mm = today.getMonth()+1;
          var yyyy = today.getFullYear();
          
-         req.body.data_add = dd+'-'+mm+'-'+yyyy;
+         req.body.data_add = dd+'-'+mm+'-'+yyyy;*/
          
          
          editar(req, req.body.id_editar);
